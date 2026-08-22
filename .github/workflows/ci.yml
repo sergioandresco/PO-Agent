@@ -30,3 +30,23 @@ jobs:
       - run: uv run ruff check .
       - run: uv run mypy .
       - run: uv run pytest
+
+  contracts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v3
+      - run: uv sync
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: uv run python -m scripts.export_schemas
+      - run: pnpm --filter @po-agent/contracts generate
+      - run: pnpm --filter @po-agent/contracts exec tsc --noEmit
+      - name: Fail if generated contracts are out of date
+        run: git diff --exit-code -- docs/schemas packages/contracts/src/generated.ts

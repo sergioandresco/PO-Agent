@@ -1,0 +1,512 @@
+{
+  "$defs": {
+    "AcceptanceCriterion": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "given": {
+          "type": "string"
+        },
+        "when": {
+          "type": "string"
+        },
+        "then": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "given",
+        "when",
+        "then"
+      ],
+      "title": "AcceptanceCriterion",
+      "type": "object"
+    },
+    "ArtifactStatus": {
+      "enum": [
+        "draft",
+        "approved",
+        "discarded"
+      ],
+      "title": "ArtifactStatus",
+      "type": "string"
+    },
+    "BacklogResult": {
+      "additionalProperties": false,
+      "properties": {
+        "meetingId": {
+          "type": "string"
+        },
+        "epics": {
+          "items": {
+            "$ref": "#/$defs/Epic"
+          },
+          "type": "array"
+        },
+        "features": {
+          "items": {
+            "$ref": "#/$defs/Feature"
+          },
+          "type": "array"
+        },
+        "stories": {
+          "items": {
+            "$ref": "#/$defs/UserStory"
+          },
+          "type": "array"
+        },
+        "generatedAt": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "pipelineVersion": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "meetingId",
+        "epics",
+        "features",
+        "stories",
+        "generatedAt",
+        "pipelineVersion"
+      ],
+      "title": "BacklogResult",
+      "type": "object"
+    },
+    "Discipline": {
+      "enum": [
+        "frontend",
+        "backend",
+        "database",
+        "infrastructure",
+        "qa",
+        "design"
+      ],
+      "title": "Discipline",
+      "type": "string"
+    },
+    "Epic": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "status": {
+          "$ref": "#/$defs/ArtifactStatus"
+        },
+        "sources": {
+          "items": {
+            "$ref": "#/$defs/SourceReference"
+          },
+          "minItems": 1,
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "title",
+        "description",
+        "status",
+        "sources"
+      ],
+      "title": "Epic",
+      "type": "object"
+    },
+    "Estimate": {
+      "additionalProperties": false,
+      "properties": {
+        "storyPoints": {
+          "enum": [
+            1,
+            2,
+            3,
+            5,
+            8,
+            13
+          ],
+          "type": "integer"
+        },
+        "rationale": {
+          "type": "string"
+        },
+        "method": {
+          "$ref": "#/$defs/EstimateMethod"
+        },
+        "confidence": {
+          "maximum": 1,
+          "minimum": 0,
+          "type": "number"
+        }
+      },
+      "required": [
+        "storyPoints",
+        "rationale",
+        "method",
+        "confidence"
+      ],
+      "title": "Estimate",
+      "type": "object"
+    },
+    "EstimateMethod": {
+      "enum": [
+        "llm_reasoning",
+        "similarity_regression",
+        "hybrid"
+      ],
+      "title": "EstimateMethod",
+      "type": "string"
+    },
+    "Feature": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "epicId": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "status": {
+          "$ref": "#/$defs/ArtifactStatus"
+        },
+        "sources": {
+          "items": {
+            "$ref": "#/$defs/SourceReference"
+          },
+          "minItems": 1,
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "epicId",
+        "title",
+        "description",
+        "status",
+        "sources"
+      ],
+      "title": "Feature",
+      "type": "object"
+    },
+    "Job": {
+      "additionalProperties": false,
+      "properties": {
+        "jobId": {
+          "type": "string"
+        },
+        "userId": {
+          "type": "string"
+        },
+        "meetingId": {
+          "type": "string"
+        },
+        "status": {
+          "$ref": "#/$defs/JobStatus"
+        },
+        "currentStage": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/PipelineStage"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "stageTimings": {
+          "additionalProperties": {
+            "type": "number"
+          },
+          "propertyNames": {
+            "$ref": "#/$defs/PipelineStage"
+          },
+          "type": "object"
+        },
+        "error": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "createdAt": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "completedAt": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "required": [
+        "jobId",
+        "userId",
+        "meetingId",
+        "status",
+        "createdAt"
+      ],
+      "title": "Job",
+      "type": "object"
+    },
+    "JobStatus": {
+      "enum": [
+        "queued",
+        "running",
+        "completed",
+        "failed"
+      ],
+      "title": "JobStatus",
+      "type": "string"
+    },
+    "PipelineStage": {
+      "enum": [
+        "normalize",
+        "segment",
+        "classify",
+        "extract_entities",
+        "generate_backlog",
+        "estimate",
+        "validate"
+      ],
+      "title": "PipelineStage",
+      "type": "string"
+    },
+    "Refinement": {
+      "additionalProperties": false,
+      "properties": {
+        "assumptions": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "dependencies": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "risks": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "openQuestions": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "definitionOfDone": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "title": "Refinement",
+      "type": "object"
+    },
+    "SourceReference": {
+      "additionalProperties": false,
+      "description": "Pointer back to the source transcript. Required on every generated artifact.",
+      "properties": {
+        "segmentId": {
+          "type": "string"
+        },
+        "startCharOffset": {
+          "type": "integer"
+        },
+        "endCharOffset": {
+          "type": "integer"
+        },
+        "startTimeMs": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "endTimeMs": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "speaker": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "verbatim": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "segmentId",
+        "startCharOffset",
+        "endCharOffset",
+        "verbatim"
+      ],
+      "title": "SourceReference",
+      "type": "object"
+    },
+    "Subtask": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "discipline": {
+          "$ref": "#/$defs/Discipline"
+        },
+        "estimatedHours": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "required": [
+        "id",
+        "title",
+        "description",
+        "discipline"
+      ],
+      "title": "Subtask",
+      "type": "object"
+    },
+    "UserStory": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "featureId": {
+          "type": "string"
+        },
+        "asA": {
+          "type": "string"
+        },
+        "iWant": {
+          "type": "string"
+        },
+        "soThat": {
+          "type": "string"
+        },
+        "acceptanceCriteria": {
+          "items": {
+            "$ref": "#/$defs/AcceptanceCriterion"
+          },
+          "type": "array"
+        },
+        "subtasks": {
+          "items": {
+            "$ref": "#/$defs/Subtask"
+          },
+          "type": "array"
+        },
+        "refinement": {
+          "$ref": "#/$defs/Refinement"
+        },
+        "estimate": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Estimate"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "confidence": {
+          "maximum": 1,
+          "minimum": 0,
+          "type": "number"
+        },
+        "status": {
+          "$ref": "#/$defs/ArtifactStatus"
+        },
+        "sources": {
+          "items": {
+            "$ref": "#/$defs/SourceReference"
+          },
+          "minItems": 1,
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "featureId",
+        "asA",
+        "iWant",
+        "soThat",
+        "acceptanceCriteria",
+        "subtasks",
+        "refinement",
+        "confidence",
+        "status",
+        "sources"
+      ],
+      "title": "UserStory",
+      "type": "object"
+    }
+  },
+  "title": "AgentePoContracts"
+}
