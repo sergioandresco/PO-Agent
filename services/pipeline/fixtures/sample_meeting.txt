@@ -1,0 +1,40 @@
+[00:00:03] Ana (Product Manager): Buenas tardes a todos, empecemos. Hoy tenemos que definir el
+alcance del módulo de notificaciones para la app móvil antes de que termine el sprint.
+
+[00:00:18] Carlos (Backend): Del lado del backend, necesitamos un servicio que dispare eventos
+cuando cambia el estado de un pedido. Propongo usar una cola para desacoplar el envío del resto
+del sistema, porque si el proveedor de push falla no queremos que se caiga el flujo de pedidos.
+
+[00:00:47] Ana: De acuerdo. ¿Como usuario qué necesito ver?
+
+[00:00:52] Sofía (Diseño): Como usuario de la app, quiero recibir una notificación push cuando mi
+pedido cambia de estado, para saber en qué punto va sin tener que abrir la app a cada rato.
+
+[00:01:10] Carlos: Hay una dependencia importante: esto necesita que el equipo de infraestructura
+habilite las credenciales de Firebase Cloud Messaging antes de que empecemos a integrar. Sin eso
+no podemos probar nada en dispositivos reales.
+
+[00:01:30] Ana: Anotado como riesgo entonces. Sofía, ¿qué pasa si el usuario tiene las
+notificaciones desactivadas a nivel de sistema operativo?
+
+[00:01:40] Sofía: Buena pregunta, es un caso que hay que cubrir. Si las notificaciones están
+desactivadas, deberíamos mostrar un banner dentro de la app la próxima vez que el usuario la
+abra, indicando que tiene notificaciones pendientes sin poder recibir push.
+
+[00:02:05] Carlos: Eso implica una tabla nueva para guardar notificaciones no entregadas y poder
+mostrarlas dentro de la app. Lo puedo estimar, pero es trabajo de base de datos y backend, no es
+trivial.
+
+[00:02:25] Ana: Bien. Para criterios de aceptación: dado que el pedido cambia de estado, cuando el
+sistema dispara el evento, entonces el usuario debe recibir la notificación push en menos de 30
+segundos si tiene los permisos activados. Y si no los tiene, entonces debe verse el banner al
+abrir la app.
+
+[00:02:55] Sofía: También deberíamos definir qué pasa con notificaciones muy viejas, ¿las
+limpiamos después de un tiempo?
+
+[00:03:02] Carlos: Sí, propongo un job que limpia notificaciones de más de 30 días. Lo dejo como
+tarea aparte para no bloquear esta historia.
+
+[00:03:15] Ana: Perfecto, con esto ya tenemos suficiente para armar la historia de usuario y sus
+subtareas. Cerramos aquí, gracias a todos.
