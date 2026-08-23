@@ -1,0 +1,25 @@
+{"jobId": "local_efa7560e", "stage": "normalize", "utterance_count": 12}
+{"jobId": "local_efa7560e", "stage": "segment", "event": "llm_call", "provider": "gemini", "model": "gemini-3.1-flash-lite", "input_tokens": 658, "output_tokens": 241, "latency_ms": 2178.2}
+{"jobId": "local_efa7560e", "stage": "segment", "segment_count": 4}
+{"jobId": "local_efa7560e", "stage": "classify", "event": "llm_call", "provider": "gemini", "model": "gemini-3.1-flash-lite", "input_tokens": 236, "output_tokens": 64, "latency_ms": 1879.7}
+{"jobId": "local_efa7560e", "stage": "classify", "segment_id": "alcance_y_arquitectura", "label_count": 2}
+{"jobId": "local_efa7560e", "stage": "extract_entities", "event": "llm_call", "provider": "gemini", "model": "gemini-3.1-flash-lite", "input_tokens": 268, "output_tokens": 370, "latency_ms": 2530.2}
+{"jobId": "local_efa7560e", "stage": "extract_entities", "segment_id": "alcance_y_arquitectura", "candidate_count": 1}
+{"jobId": "local_efa7560e", "stage": "classify", "event": "llm_call", "provider": "gemini", "model": "gemini-3.1-flash-lite", "input_tokens": 240, "output_tokens": 87, "latency_ms": 1675.7}
+{"jobId": "local_efa7560e", "stage": "classify", "segment_id": "requisitos_usuario_e_infraestructura", "label_count": 3}
+{"jobId": "local_efa7560e", "stage": "extract_entities", "event": "llm_call", "provider": "gemini", "model": "gemini-3.1-flash-lite", "input_tokens": 313, "output_tokens": 347, "latency_ms": 2393.8}
+{"jobId": "local_efa7560e", "stage": "extract_entities", "segment_id": "requisitos_usuario_e_infraestructura", "candidate_count": 1}
+{"jobId": "local_efa7560e", "stage": "classify", "event": "llm_call", "provider": "gemini", "model": "gemini-3.1-flash-lite", "input_tokens": 274, "output_tokens": 87, "latency_ms": 1848.9}
+{"jobId": "local_efa7560e", "stage": "classify", "segment_id": "manejo_de_casos_borde", "label_count": 3}
+{"jobId": "local_efa7560e", "stage": "extract_entities", "event": "llm_call", "provider": "gemini", "model": "gemini-3.1-flash-lite", "input_tokens": 347, "output_tokens": 376, "latency_ms": 2403.3}
+{"jobId": "local_efa7560e", "stage": "extract_entities", "segment_id": "manejo_de_casos_borde", "candidate_count": 1}
+{"jobId": "local_efa7560e", "stage": "classify", "event": "llm_call", "provider": "gemini", "model": "gemini-3.1-flash-lite", "input_tokens": 308, "output_tokens": 116, "latency_ms": 3744.5}
+{"jobId": "local_efa7560e", "stage": "classify", "segment_id": "criterios_aceptacion_y_cierre", "label_count": 4}
+{"jobId": "local_efa7560e", "stage": "extract_entities", "event": "llm_call", "provider": "gemini", "model": "gemini-3.1-flash-lite", "input_tokens": 346, "output_tokens": 594, "latency_ms": 3370.0}
+{"jobId": "local_efa7560e", "stage": "extract_entities", "segment_id": "criterios_aceptacion_y_cierre", "candidate_count": 2}
+{"jobId": "local_efa7560e", "stage": "generate_backlog", "event": "llm_call", "provider": "gemini", "model": "gemini-3.1-flash-lite", "input_tokens": 426, "output_tokens": 865, "latency_ms": 4584.6}
+{"jobId": "local_efa7560e", "stage": "generate_backlog", "story_count": 5}
+{"jobId": "local_efa7560e", "stage": "estimate", "event": "llm_call", "provider": "gemini", "model": "gemini-3.1-flash-lite", "input_tokens": 584, "output_tokens": 381, "latency_ms": 2592.7}
+{"jobId": "local_efa7560e", "stage": "estimate", "estimated_count": 5}
+{"jobId": "local_efa7560e", "stage": "validate", "final_story_count": 5}
+{"jobId": "local_efa7560e", "stage": "pipeline", "total_seconds": 29.23}

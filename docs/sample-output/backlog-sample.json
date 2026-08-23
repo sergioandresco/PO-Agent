@@ -1,0 +1,602 @@
+{
+  "meetingId": "sample_meeting",
+  "epics": [
+    {
+      "id": "epic_9b6f4eda",
+      "title": "Sistema de Notificaciones y Eventos",
+      "description": "Infraestructura y gestión de comunicaciones para informar al usuario sobre el ciclo de vida de sus pedidos.",
+      "status": "draft",
+      "sources": [
+        {
+          "segmentId": "alcance_y_arquitectura",
+          "startCharOffset": 183,
+          "endCharOffset": 470,
+          "startTimeMs": 18000,
+          "endTimeMs": null,
+          "speaker": "Carlos (Backend)",
+          "verbatim": "Del lado del backend, necesitamos un servicio que dispare eventos\ncuando cambia el estado de un pedido. Propongo usar una cola para desacoplar el envío del resto\ndel sistema, porque si el proveedor de push falla no queremos que se caiga el flujo de pedidos."
+        },
+        {
+          "segmentId": "requisitos_usuario_e_infraestructura",
+          "startCharOffset": 532,
+          "endCharOffset": 722,
+          "startTimeMs": 52000,
+          "endTimeMs": null,
+          "speaker": "Sofía (Diseño)",
+          "verbatim": "Como usuario de la app, quiero recibir una notificación push cuando mi\npedido cambia de estado, para saber en qué punto va sin tener que abrir la app a cada rato."
+        },
+        {
+          "segmentId": "requisitos_usuario_e_infraestructura",
+          "startCharOffset": 723,
+          "endCharOffset": 965,
+          "startTimeMs": 70000,
+          "endTimeMs": null,
+          "speaker": "Carlos",
+          "verbatim": "Hay una dependencia importante: esto necesita que el equipo de infraestructura\nhabilite las credenciales de Firebase Cloud Messaging antes de que empecemos a integrar. Sin eso\nno podemos probar nada en dispositivos reales."
+        },
+        {
+          "segmentId": "criterios_aceptacion_y_cierre",
+          "startCharOffset": 1579,
+          "endCharOffset": 1882,
+          "startTimeMs": 145000,
+          "endTimeMs": null,
+          "speaker": "Ana",
+          "verbatim": "Bien. Para criterios de aceptación: dado que el pedido cambia de estado, cuando el\nsistema dispara el evento, entonces el usuario debe recibir la notificación push en menos de 30\nsegundos si tiene los permisos activados. Y si no los tiene, entonces debe verse el banner al\nabrir la app."
+        },
+        {
+          "segmentId": "manejo_de_casos_borde",
+          "startCharOffset": 966,
+          "endCharOffset": 1111,
+          "startTimeMs": 90000,
+          "endTimeMs": null,
+          "speaker": "Ana",
+          "verbatim": "Anotado como riesgo entonces. Sofía, ¿qué pasa si el usuario tiene las\nnotificaciones desactivadas a nivel de sistema operativo?"
+        },
+        {
+          "segmentId": "manejo_de_casos_borde",
+          "startCharOffset": 1112,
+          "endCharOffset": 1374,
+          "startTimeMs": 100000,
+          "endTimeMs": null,
+          "speaker": "Sofía",
+          "verbatim": "Buena pregunta, es un caso que hay que cubrir. Si las notificaciones están\ndesactivadas, deberíamos mostrar un banner dentro de la app la próxima vez que el usuario la\nabra, indicando que tiene notificaciones pendientes sin poder recibir push."
+        },
+        {
+          "segmentId": "manejo_de_casos_borde",
+          "startCharOffset": 1375,
+          "endCharOffset": 1578,
+          "startTimeMs": 125000,
+          "endTimeMs": null,
+          "speaker": "Carlos",
+          "verbatim": "Eso implica una tabla nueva para guardar notificaciones no entregadas y poder\nmostrarlas dentro de la app. Lo puedo estimar, pero es trabajo de base de datos y backend, no es\ntrivial."
+        },
+        {
+          "segmentId": "criterios_aceptacion_y_cierre",
+          "startCharOffset": 1883,
+          "endCharOffset": 2005,
+          "startTimeMs": 175000,
+          "endTimeMs": null,
+          "speaker": "Sofía",
+          "verbatim": "También deberíamos definir qué pasa con notificaciones muy viejas, ¿las\nlimpiamos después de un tiempo?"
+        },
+        {
+          "segmentId": "criterios_aceptacion_y_cierre",
+          "startCharOffset": 2006,
+          "endCharOffset": 2148,
+          "startTimeMs": 182000,
+          "endTimeMs": null,
+          "speaker": "Carlos",
+          "verbatim": "Sí, propongo un job que limpia notificaciones de más de 30 días. Lo dejo como\ntarea aparte para no bloquear esta historia."
+        }
+      ]
+    }
+  ],
+  "features": [
+    {
+      "id": "feature_493d7dbf",
+      "epicId": "epic_9b6f4eda",
+      "title": "Arquitectura de Notificaciones",
+      "description": "Implementación técnica y lógica de negocio para la gestión de mensajes de estado de pedidos.",
+      "status": "draft",
+      "sources": [
+        {
+          "segmentId": "alcance_y_arquitectura",
+          "startCharOffset": 183,
+          "endCharOffset": 470,
+          "startTimeMs": 18000,
+          "endTimeMs": null,
+          "speaker": "Carlos (Backend)",
+          "verbatim": "Del lado del backend, necesitamos un servicio que dispare eventos\ncuando cambia el estado de un pedido. Propongo usar una cola para desacoplar el envío del resto\ndel sistema, porque si el proveedor de push falla no queremos que se caiga el flujo de pedidos."
+        },
+        {
+          "segmentId": "requisitos_usuario_e_infraestructura",
+          "startCharOffset": 532,
+          "endCharOffset": 722,
+          "startTimeMs": 52000,
+          "endTimeMs": null,
+          "speaker": "Sofía (Diseño)",
+          "verbatim": "Como usuario de la app, quiero recibir una notificación push cuando mi\npedido cambia de estado, para saber en qué punto va sin tener que abrir la app a cada rato."
+        },
+        {
+          "segmentId": "requisitos_usuario_e_infraestructura",
+          "startCharOffset": 723,
+          "endCharOffset": 965,
+          "startTimeMs": 70000,
+          "endTimeMs": null,
+          "speaker": "Carlos",
+          "verbatim": "Hay una dependencia importante: esto necesita que el equipo de infraestructura\nhabilite las credenciales de Firebase Cloud Messaging antes de que empecemos a integrar. Sin eso\nno podemos probar nada en dispositivos reales."
+        },
+        {
+          "segmentId": "criterios_aceptacion_y_cierre",
+          "startCharOffset": 1579,
+          "endCharOffset": 1882,
+          "startTimeMs": 145000,
+          "endTimeMs": null,
+          "speaker": "Ana",
+          "verbatim": "Bien. Para criterios de aceptación: dado que el pedido cambia de estado, cuando el\nsistema dispara el evento, entonces el usuario debe recibir la notificación push en menos de 30\nsegundos si tiene los permisos activados. Y si no los tiene, entonces debe verse el banner al\nabrir la app."
+        }
+      ]
+    },
+    {
+      "id": "feature_73429d90",
+      "epicId": "epic_9b6f4eda",
+      "title": "Experiencia de Usuario en Notificaciones",
+      "description": "Funcionalidades enfocadas en la accesibilidad y visualización de mensajes dentro de la aplicación.",
+      "status": "draft",
+      "sources": [
+        {
+          "segmentId": "manejo_de_casos_borde",
+          "startCharOffset": 966,
+          "endCharOffset": 1111,
+          "startTimeMs": 90000,
+          "endTimeMs": null,
+          "speaker": "Ana",
+          "verbatim": "Anotado como riesgo entonces. Sofía, ¿qué pasa si el usuario tiene las\nnotificaciones desactivadas a nivel de sistema operativo?"
+        },
+        {
+          "segmentId": "manejo_de_casos_borde",
+          "startCharOffset": 1112,
+          "endCharOffset": 1374,
+          "startTimeMs": 100000,
+          "endTimeMs": null,
+          "speaker": "Sofía",
+          "verbatim": "Buena pregunta, es un caso que hay que cubrir. Si las notificaciones están\ndesactivadas, deberíamos mostrar un banner dentro de la app la próxima vez que el usuario la\nabra, indicando que tiene notificaciones pendientes sin poder recibir push."
+        },
+        {
+          "segmentId": "manejo_de_casos_borde",
+          "startCharOffset": 1375,
+          "endCharOffset": 1578,
+          "startTimeMs": 125000,
+          "endTimeMs": null,
+          "speaker": "Carlos",
+          "verbatim": "Eso implica una tabla nueva para guardar notificaciones no entregadas y poder\nmostrarlas dentro de la app. Lo puedo estimar, pero es trabajo de base de datos y backend, no es\ntrivial."
+        }
+      ]
+    },
+    {
+      "id": "feature_1533dcb5",
+      "epicId": "epic_9b6f4eda",
+      "title": "Mantenimiento y Rendimiento",
+      "description": "Gestión de la persistencia de datos y limpieza de información histórica.",
+      "status": "draft",
+      "sources": [
+        {
+          "segmentId": "criterios_aceptacion_y_cierre",
+          "startCharOffset": 1883,
+          "endCharOffset": 2005,
+          "startTimeMs": 175000,
+          "endTimeMs": null,
+          "speaker": "Sofía",
+          "verbatim": "También deberíamos definir qué pasa con notificaciones muy viejas, ¿las\nlimpiamos después de un tiempo?"
+        },
+        {
+          "segmentId": "criterios_aceptacion_y_cierre",
+          "startCharOffset": 2006,
+          "endCharOffset": 2148,
+          "startTimeMs": 182000,
+          "endTimeMs": null,
+          "speaker": "Carlos",
+          "verbatim": "Sí, propongo un job que limpia notificaciones de más de 30 días. Lo dejo como\ntarea aparte para no bloquear esta historia."
+        }
+      ]
+    }
+  ],
+  "stories": [
+    {
+      "id": "story_dec6a833",
+      "featureId": "feature_493d7dbf",
+      "asA": "Sistema de Pedidos",
+      "iWant": "disparar eventos en una cola al cambiar el estado de un pedido",
+      "soThat": "el flujo de pedidos no se vea afectado si el proveedor de notificaciones push falla",
+      "acceptanceCriteria": [
+        {
+          "id": "ac_d593e8",
+          "given": "un pedido cambia de estado",
+          "when": "el proceso de cambio de estado finaliza",
+          "then": "se debe publicar un evento en la cola y no bloquear la respuesta principal del sistema"
+        },
+        {
+          "id": "ac_4c2180",
+          "given": "el proveedor de notificaciones push está fuera de servicio",
+          "when": "se procesa un cambio de estado",
+          "then": "el servicio de pedidos debe continuar operando normalmente sin errores"
+        }
+      ],
+      "subtasks": [
+        {
+          "id": "subtask_e2d3fe",
+          "title": "Configuración de la cola de mensajes",
+          "description": "Configurar la infraestructura de mensajería (ej. RabbitMQ, SQS) para desacoplar el servicio de pedidos.",
+          "discipline": "infrastructure",
+          "estimatedHours": null
+        },
+        {
+          "id": "subtask_89950a",
+          "title": "Desarrollo del productor de eventos",
+          "description": "Implementar la lógica en el backend para disparar eventos hacia la cola al actualizar el estado de un pedido.",
+          "discipline": "backend",
+          "estimatedHours": null
+        }
+      ],
+      "refinement": {
+        "assumptions": [
+          "Ya existe una infraestructura de colas (ej: RabbitMQ, SQS)"
+        ],
+        "dependencies": [
+          "Configuración del Message Broker"
+        ],
+        "risks": [
+          "Sobrecarga en la base de datos si la cola se llena"
+        ],
+        "openQuestions": [
+          "¿Qué formato de mensaje debe tener el evento?"
+        ],
+        "definitionOfDone": [
+          "Evento emitido correctamente",
+          "El flujo principal de pedidos no se bloquea si el consumidor falla"
+        ]
+      },
+      "estimate": {
+        "storyPoints": 5,
+        "rationale": "Requiere implementar un patrón de mensajería asíncrona robusto y asegurar el desacoplamiento mediante una cola, lo cual conlleva una complejidad media en infraestructura.",
+        "method": "llm_reasoning",
+        "confidence": 0.9
+      },
+      "confidence": 1.0,
+      "status": "draft",
+      "sources": [
+        {
+          "segmentId": "alcance_y_arquitectura",
+          "startCharOffset": 183,
+          "endCharOffset": 470,
+          "startTimeMs": 18000,
+          "endTimeMs": null,
+          "speaker": "Carlos (Backend)",
+          "verbatim": "Del lado del backend, necesitamos un servicio que dispare eventos\ncuando cambia el estado de un pedido. Propongo usar una cola para desacoplar el envío del resto\ndel sistema, porque si el proveedor de push falla no queremos que se caiga el flujo de pedidos."
+        }
+      ]
+    },
+    {
+      "id": "story_3f791a7a",
+      "featureId": "feature_493d7dbf",
+      "asA": "usuario de la app",
+      "iWant": "recibir una notificación push cuando mi pedido cambia de estado",
+      "soThat": "saber en qué punto va mi pedido sin tener que abrir la app a cada rato",
+      "acceptanceCriteria": [
+        {
+          "id": "ac_68d417",
+          "given": "el pedido ha cambiado de estado",
+          "when": "el cambio de estado es procesado por el sistema",
+          "then": "se envía una notificación push al dispositivo del usuario"
+        }
+      ],
+      "subtasks": [
+        {
+          "id": "subtask_d669ba",
+          "title": "Habilitar credenciales FCM",
+          "description": "Configurar y habilitar las credenciales de Firebase Cloud Messaging en el entorno de desarrollo.",
+          "discipline": "infrastructure",
+          "estimatedHours": null
+        },
+        {
+          "id": "subtask_c4e8f2",
+          "title": "Implementar servicio de notificaciones",
+          "description": "Desarrollar la lógica en el backend para disparar notificaciones al cambiar el estado del pedido.",
+          "discipline": "backend",
+          "estimatedHours": null
+        },
+        {
+          "id": "subtask_0ae68a",
+          "title": "Integrar recepción de notificaciones",
+          "description": "Implementar la recepción y visualización de notificaciones push en la aplicación móvil.",
+          "discipline": "frontend",
+          "estimatedHours": null
+        }
+      ],
+      "refinement": {
+        "assumptions": [
+          "El usuario ha otorgado permisos de push"
+        ],
+        "dependencies": [
+          "Integración con proveedores de Push (FCM/APNs)"
+        ],
+        "risks": [
+          "Latencia en la entrega de la notificación"
+        ],
+        "openQuestions": [
+          "¿Qué estados del pedido dispararán notificaciones?"
+        ],
+        "definitionOfDone": [
+          "Notificación recibida en dispositivo móvil",
+          "El contenido incluye información relevante del pedido"
+        ]
+      },
+      "estimate": {
+        "storyPoints": 3,
+        "rationale": "Implica integrar un servicio de notificaciones push y gestionar la lógica de envío tras la recepción del evento, con un nivel de esfuerzo moderado.",
+        "method": "llm_reasoning",
+        "confidence": 0.85
+      },
+      "confidence": 1.0,
+      "status": "draft",
+      "sources": [
+        {
+          "segmentId": "requisitos_usuario_e_infraestructura",
+          "startCharOffset": 532,
+          "endCharOffset": 722,
+          "startTimeMs": 52000,
+          "endTimeMs": null,
+          "speaker": "Sofía (Diseño)",
+          "verbatim": "Como usuario de la app, quiero recibir una notificación push cuando mi\npedido cambia de estado, para saber en qué punto va sin tener que abrir la app a cada rato."
+        },
+        {
+          "segmentId": "requisitos_usuario_e_infraestructura",
+          "startCharOffset": 723,
+          "endCharOffset": 965,
+          "startTimeMs": 70000,
+          "endTimeMs": null,
+          "speaker": "Carlos",
+          "verbatim": "Hay una dependencia importante: esto necesita que el equipo de infraestructura\nhabilite las credenciales de Firebase Cloud Messaging antes de que empecemos a integrar. Sin eso\nno podemos probar nada en dispositivos reales."
+        }
+      ]
+    },
+    {
+      "id": "story_62c6b28e",
+      "featureId": "feature_493d7dbf",
+      "asA": "usuario del sistema",
+      "iWant": "recibir notificaciones push o un banner al abrir la aplicación cuando mi pedido cambie de estado",
+      "soThat": "esté informado sobre el progreso de mi pedido en tiempo real",
+      "acceptanceCriteria": [
+        {
+          "id": "ac_066253",
+          "given": "el pedido cambia de estado y tengo permisos activados",
+          "when": "el sistema dispara el evento",
+          "then": "debo recibir una notificación push en menos de 30 segundos"
+        },
+        {
+          "id": "ac_9269c4",
+          "given": "el pedido cambia de estado y no tengo permisos activados",
+          "when": "abro la aplicación",
+          "then": "debe visualizarse un banner informando del cambio"
+        }
+      ],
+      "subtasks": [
+        {
+          "id": "subtask_ec2937",
+          "title": "Implementar lógica de notificaciones push",
+          "description": "Desarrollar el servicio que gestiona el envío de notificaciones push basado en el cambio de estado del pedido.",
+          "discipline": "backend",
+          "estimatedHours": null
+        },
+        {
+          "id": "subtask_7de285",
+          "title": "Implementar banner en UI",
+          "description": "Desarrollar el componente visual que muestra el estado del pedido al abrir la app si las push están desactivadas.",
+          "discipline": "frontend",
+          "estimatedHours": null
+        }
+      ],
+      "refinement": {
+        "assumptions": [
+          "Consolidación lógica entre notificaciones push y banners en app"
+        ],
+        "dependencies": [
+          "Historia 0 y 1"
+        ],
+        "risks": [
+          "Duplicidad de alertas"
+        ],
+        "openQuestions": [
+          "¿Existe una prioridad entre el banner y el push?"
+        ],
+        "definitionOfDone": [
+          "El usuario recibe una notificación independientemente del canal"
+        ]
+      },
+      "estimate": {
+        "storyPoints": 8,
+        "rationale": "Esta historia requiere sincronizar la lógica de envío en tiempo real y, simultáneamente, desarrollar una interfaz de usuario dinámica para el manejo de banners, sumando una complejidad técnica considerable.",
+        "method": "llm_reasoning",
+        "confidence": 0.8
+      },
+      "confidence": 1.0,
+      "status": "draft",
+      "sources": [
+        {
+          "segmentId": "criterios_aceptacion_y_cierre",
+          "startCharOffset": 1579,
+          "endCharOffset": 1882,
+          "startTimeMs": 145000,
+          "endTimeMs": null,
+          "speaker": "Ana",
+          "verbatim": "Bien. Para criterios de aceptación: dado que el pedido cambia de estado, cuando el\nsistema dispara el evento, entonces el usuario debe recibir la notificación push en menos de 30\nsegundos si tiene los permisos activados. Y si no los tiene, entonces debe verse el banner al\nabrir la app."
+        }
+      ]
+    },
+    {
+      "id": "story_bcc57d88",
+      "featureId": "feature_73429d90",
+      "asA": "usuario con notificaciones desactivadas en el sistema operativo",
+      "iWant": "ver un banner dentro de la aplicación al abrirla",
+      "soThat": "pueda ser notificado sobre los mensajes pendientes que no llegaron por push",
+      "acceptanceCriteria": [
+        {
+          "id": "ac_06875b",
+          "given": "el usuario tiene las notificaciones desactivadas a nivel de sistema operativo",
+          "when": "el usuario abre la aplicación",
+          "then": "la aplicación muestra un banner indicando que hay notificaciones pendientes"
+        }
+      ],
+      "subtasks": [
+        {
+          "id": "subtask_25b58b",
+          "title": "Diseñar tabla de notificaciones persistentes",
+          "description": "Crear esquema de base de datos para almacenar notificaciones no entregadas por el sistema operativo.",
+          "discipline": "database",
+          "estimatedHours": null
+        },
+        {
+          "id": "subtask_46b6b2",
+          "title": "Implementar servicio de persistencia de notificaciones",
+          "description": "Desarrollar lógica en el backend para interceptar notificaciones no entregadas y guardarlas en la base de datos.",
+          "discipline": "backend",
+          "estimatedHours": null
+        },
+        {
+          "id": "subtask_b9c36e",
+          "title": "Implementar banner de notificaciones en UI",
+          "description": "Crear componente visual de banner que se despliega al detectar estado de notificaciones desactivadas y consulta de pendientes.",
+          "discipline": "frontend",
+          "estimatedHours": null
+        }
+      ],
+      "refinement": {
+        "assumptions": [
+          "La aplicación puede detectar el estado de permisos del OS"
+        ],
+        "dependencies": [
+          "Implementación de API de estados de notificación"
+        ],
+        "risks": [
+          "Puede resultar intrusivo para el usuario"
+        ],
+        "openQuestions": [
+          "¿Dónde debe mostrarse el banner exactamente?"
+        ],
+        "definitionOfDone": [
+          "Banner visible solo si los permisos están denegados",
+          "Clic en el banner lleva a la configuración o a la vista de mensajes"
+        ]
+      },
+      "estimate": {
+        "storyPoints": 5,
+        "rationale": "Implica consultar estados persistentes de notificaciones al abrir la app y gestionar la renderización de la UI, lo cual requiere coordinación entre el backend y el frontend.",
+        "method": "llm_reasoning",
+        "confidence": 0.85
+      },
+      "confidence": 0.9,
+      "status": "draft",
+      "sources": [
+        {
+          "segmentId": "manejo_de_casos_borde",
+          "startCharOffset": 966,
+          "endCharOffset": 1111,
+          "startTimeMs": 90000,
+          "endTimeMs": null,
+          "speaker": "Ana",
+          "verbatim": "Anotado como riesgo entonces. Sofía, ¿qué pasa si el usuario tiene las\nnotificaciones desactivadas a nivel de sistema operativo?"
+        },
+        {
+          "segmentId": "manejo_de_casos_borde",
+          "startCharOffset": 1112,
+          "endCharOffset": 1374,
+          "startTimeMs": 100000,
+          "endTimeMs": null,
+          "speaker": "Sofía",
+          "verbatim": "Buena pregunta, es un caso que hay que cubrir. Si las notificaciones están\ndesactivadas, deberíamos mostrar un banner dentro de la app la próxima vez que el usuario la\nabra, indicando que tiene notificaciones pendientes sin poder recibir push."
+        },
+        {
+          "segmentId": "manejo_de_casos_borde",
+          "startCharOffset": 1375,
+          "endCharOffset": 1578,
+          "startTimeMs": 125000,
+          "endTimeMs": null,
+          "speaker": "Carlos",
+          "verbatim": "Eso implica una tabla nueva para guardar notificaciones no entregadas y poder\nmostrarlas dentro de la app. Lo puedo estimar, pero es trabajo de base de datos y backend, no es\ntrivial."
+        }
+      ]
+    },
+    {
+      "id": "story_0080681f",
+      "featureId": "feature_1533dcb5",
+      "asA": "administrador del sistema",
+      "iWant": "que se eliminen automáticamente las notificaciones con más de 30 días de antigüedad",
+      "soThat": "mantenga la base de datos limpia y optimizada",
+      "acceptanceCriteria": [
+        {
+          "id": "ac_6d784b",
+          "given": "existen notificaciones con una antigüedad mayor a 30 días",
+          "when": "el job de limpieza se ejecuta",
+          "then": "las notificaciones deben ser eliminadas del sistema"
+        }
+      ],
+      "subtasks": [
+        {
+          "id": "subtask_ca7de9",
+          "title": "Crear job de limpieza de base de datos",
+          "description": "Configurar una tarea programada que elimine registros de notificaciones con antigüedad superior a 30 días.",
+          "discipline": "database",
+          "estimatedHours": null
+        }
+      ],
+      "refinement": {
+        "assumptions": [
+          "Las notificaciones se guardan en una tabla relacional"
+        ],
+        "dependencies": [
+          "Acceso al scheduler de tareas"
+        ],
+        "risks": [
+          "Impacto en rendimiento durante la ejecución del job"
+        ],
+        "openQuestions": [
+          "¿La eliminación es permanente o se archiva?"
+        ],
+        "definitionOfDone": [
+          "Job de limpieza ejecutándose correctamente",
+          "Validado el borrado de registros > 30 días"
+        ]
+      },
+      "estimate": {
+        "storyPoints": 2,
+        "rationale": "Es una tarea de mantenimiento estándar que consiste en la creación de un job programado simple, con muy poca complejidad lógica.",
+        "method": "llm_reasoning",
+        "confidence": 0.95
+      },
+      "confidence": 1.0,
+      "status": "draft",
+      "sources": [
+        {
+          "segmentId": "criterios_aceptacion_y_cierre",
+          "startCharOffset": 1883,
+          "endCharOffset": 2005,
+          "startTimeMs": 175000,
+          "endTimeMs": null,
+          "speaker": "Sofía",
+          "verbatim": "También deberíamos definir qué pasa con notificaciones muy viejas, ¿las\nlimpiamos después de un tiempo?"
+        },
+        {
+          "segmentId": "criterios_aceptacion_y_cierre",
+          "startCharOffset": 2006,
+          "endCharOffset": 2148,
+          "startTimeMs": 182000,
+          "endTimeMs": null,
+          "speaker": "Carlos",
+          "verbatim": "Sí, propongo un job que limpia notificaciones de más de 30 días. Lo dejo como\ntarea aparte para no bloquear esta historia."
+        }
+      ]
+    }
+  ],
+  "generatedAt": "2026-08-23T16:43:10.241111Z",
+  "pipelineVersion": "0.1.0"
+}
