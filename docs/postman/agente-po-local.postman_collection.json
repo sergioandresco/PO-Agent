@@ -1,0 +1,58 @@
+{
+  "info": {
+    "name": "Agente PO - Local Dev API",
+    "description": "Servidor local (services/api/local_server.py, puerto 3001) que expone el pipeline por HTTP antes de que exista infraestructura AWS. Requiere un JWT de sesion de Clerk valido en {{clerk_token}}.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "base_url", "value": "http://localhost:3001" },
+    { "key": "clerk_token", "value": "" },
+    { "key": "job_id", "value": "" }
+  ],
+  "item": [
+    {
+      "name": "Create job",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Authorization", "value": "Bearer {{clerk_token}}" },
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "url": "{{base_url}}/jobs",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"meetingId\": \"sample_meeting\",\n  \"transcriptText\": \"[00:00:03] Ana (Product Manager): Buenas tardes a todos, empecemos.\\n\\n[00:00:18] Carlos (Backend): Del lado del backend, necesitamos un servicio que dispare eventos cuando cambia el estado de un pedido.\"\n}"
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "if (pm.response.code === 202) {",
+              "    const body = pm.response.json();",
+              "    pm.collectionVariables.set('job_id', body.jobId);",
+              "}"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Get job status",
+      "request": {
+        "method": "GET",
+        "header": [{ "key": "Authorization", "value": "Bearer {{clerk_token}}" }],
+        "url": "{{base_url}}/jobs/{{job_id}}"
+      }
+    },
+    {
+      "name": "Get job result",
+      "request": {
+        "method": "GET",
+        "header": [{ "key": "Authorization", "value": "Bearer {{clerk_token}}" }],
+        "url": "{{base_url}}/jobs/{{job_id}}/result"
+      }
+    }
+  ]
+}

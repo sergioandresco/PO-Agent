@@ -72,6 +72,7 @@ class Estimate(ApiModel):
 class UserStory(ApiModel):
     id: str
     feature_id: str
+    title: str
     as_a: str
     i_want: str
     so_that: str

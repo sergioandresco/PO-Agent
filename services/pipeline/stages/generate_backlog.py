@@ -143,6 +143,7 @@ async def generate_backlog(
                     UserStory(
                         id=f"story_{uuid4().hex[:8]}",
                         feature_id=feature_id,
+                        title=candidate.title,
                         as_a=candidate.as_a,
                         i_want=candidate.i_want,
                         so_that=candidate.so_that,

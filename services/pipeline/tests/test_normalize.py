@@ -43,3 +43,58 @@ def test_normalize_handles_multiline_utterances() -> None:
 
 def test_normalize_empty_transcript_returns_no_utterances() -> None:
     assert normalize("") == []
+
+
+REAL_MEETING_TRANSCRIPT = (
+    "Asunto: Kick-off Integracion\n"
+    "Participantes:\n"
+    " Carlos Mendoza: Lider de Logistica, Dislicores\n"
+    " Fecha de la reunion: 21 de agosto de 2026\n"
+    "[Inicio de la transcripcion]\n"
+    "Carlos: Hola, David. Gracias por el espacio.\n"
+    "David: Hola, Carlos. Entendido.\n"
+    "[Fin de la transcripcion]\n"
+    "Acuerdos y Definiciones de Negocio\n"
+    " Estado Comprometido: Documento con aprobacion financiera.\n"
+)
+
+
+def test_normalize_handles_untimestamped_speaker_colon_text() -> None:
+    utterances = normalize(REAL_MEETING_TRANSCRIPT)
+
+    assert len(utterances) == 2
+    assert utterances[0].speaker == "Carlos"
+    assert utterances[0].timestamp_ms is None
+    assert utterances[0].text == "Hola, David. Gracias por el espacio."
+    assert utterances[1].speaker == "David"
+
+
+def test_normalize_excludes_header_and_footer_outside_transcript_markers() -> None:
+    utterances = normalize(REAL_MEETING_TRANSCRIPT)
+
+    all_text = " ".join(u.text for u in utterances)
+    all_speakers = {u.speaker for u in utterances}
+    assert "Lider de Logistica" not in all_text
+    assert "Estado Comprometido" not in all_text
+    assert "Fecha de la reunion" not in all_speakers
+
+
+MEET_STYLE_TRANSCRIPT = (
+    "Ana Garcia  0:03\n"
+    "Hola a todos, empecemos con la reunion de hoy.\n\n"
+    "Carlos Lopez  0:15\n"
+    "Perfecto, del lado del backend tenemos listo el servicio.\n\n"
+    "Ana Garcia  0:32\n"
+    "Genial, entonces seguimos con el siguiente punto.\n"
+)
+
+
+def test_normalize_falls_back_to_meet_style_header_when_no_colon_dialogue() -> None:
+    utterances = normalize(MEET_STYLE_TRANSCRIPT)
+
+    assert len(utterances) == 3
+    assert utterances[0].speaker == "Ana Garcia"
+    assert utterances[0].timestamp_ms == 3_000
+    assert utterances[0].text == "Hola a todos, empecemos con la reunion de hoy."
+    assert utterances[1].speaker == "Carlos Lopez"
+    assert utterances[1].timestamp_ms == 15_000

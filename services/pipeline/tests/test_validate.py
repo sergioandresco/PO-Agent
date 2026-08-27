@@ -22,6 +22,7 @@ def _story(story_id: str, feature_id: str) -> UserStory:
     return UserStory(
         id=story_id,
         feature_id=feature_id,
+        title="titulo",
         as_a="usuario",
         i_want="algo",
         so_that="beneficio",

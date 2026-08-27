@@ -48,11 +48,6 @@ class GeminiProvider:
             raise LlmProviderError(f"Gemini API call failed: {exc}") from exc
         latency_ms = (time.perf_counter() - started) * 1000
 
-        # We never pass stream=True, so `create()` always returns a plain Interaction,
-        # never the AsyncStream half of its return union. mypy can't see that from a
-        # **body kwargs call, and the SDK's generated Interaction alias resolves
-        # incorrectly under mypy despite being correct at runtime (verified directly
-        # against the installed google-genai package).
         usage = interaction.usage  # type: ignore[union-attr]
         return CompletionResponse(
             text=interaction.output_text or "",  # type: ignore[union-attr]

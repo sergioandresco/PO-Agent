@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, JetBrains_Mono } from "next/font/google";
+import { dark } from "@clerk/themes";
 import {
   ClerkProvider,
   Show,
@@ -9,14 +10,16 @@ import {
 } from "@clerk/nextjs";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
+  weight: ["400", "500", "600"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const jetBrainsMono = JetBrains_Mono({
+  variable: "--font-jetbrains-mono",
   subsets: ["latin"],
+  weight: ["400", "500"],
 });
 
 export const metadata: Metadata = {
@@ -28,18 +31,37 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="es"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${inter.variable} ${jetBrainsMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
-        <ClerkProvider>
-          <header className="flex justify-end items-center gap-4 p-4 border-b">
-            <Show when="signed-out">
-              <SignInButton />
-              <SignUpButton />
-            </Show>
-            <Show when="signed-in">
-              <UserButton />
-            </Show>
+      <body className="min-h-full flex flex-col bg-canvas text-text">
+        <ClerkProvider
+          appearance={{
+            theme: dark,
+            variables: {
+              colorPrimary: "#9184d9",
+              colorBackground: "#161826",
+              colorForeground: "#e9e9ed",
+              borderRadius: "8px",
+              fontFamily: "Inter, system-ui, sans-serif",
+            },
+          }}
+        >
+          <header className="flex items-center gap-3 border-b border-border-soft px-7 py-3">
+            <span className="inline-flex h-[26px] w-[26px] items-center justify-center rounded-[7px] font-mono text-[11px] text-accent-soft shadow-[inset_0_0_0_1px_var(--color-accent)]">
+              PO
+            </span>
+            <span className="text-[15px] font-medium tracking-[-0.01em]">
+              Agente PO
+            </span>
+            <div className="ml-auto flex items-center gap-3">
+              <Show when="signed-out">
+                <SignInButton />
+                <SignUpButton />
+              </Show>
+              <Show when="signed-in">
+                <UserButton />
+              </Show>
+            </div>
           </header>
           {children}
         </ClerkProvider>

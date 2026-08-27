@@ -109,6 +109,7 @@ export interface Feature {
 export interface UserStory {
   id: string;
   featureId: string;
+  title: string;
   asA: string;
   iWant: string;
   soThat: string;

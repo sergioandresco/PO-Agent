@@ -1,26 +1,202 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-canvas: #101220;
+  --color-bg: #161826;
+  --color-surface: #232532;
+  --color-surface-2: #1b1d2b;
+  --color-panel: #191b28;
+  --color-feature: #1e202e;
+  --color-feature-discarded: #1c1d29;
+
+  --color-border: #3f424d;
+  --color-border-soft: rgba(233, 233, 237, 0.08);
+  --color-border-soft-2: rgba(233, 233, 237, 0.14);
+  --color-border-soft-3: rgba(233, 233, 237, 0.1);
+
+  --color-text: #e9e9ed;
+  --color-text-2: #cfd3e5;
+  --color-text-3: #b2b6ca;
+  --color-text-4: #9397ab;
+  --color-text-5: #75798c;
+  --color-text-6: #595d6c;
+
+  --color-accent: #9184d9;
+  --color-accent-soft: #b5abfc;
+  --color-accent-strong: #8b7fd0;
+  --color-accent-pale: #d2cefd;
+  --color-accent-wash: rgba(145, 132, 217, 0.09);
+  --color-accent-wash-2: rgba(145, 132, 217, 0.16);
+  --color-accent-ring: rgba(145, 132, 217, 0.45);
+  --color-accent-ring-soft: rgba(145, 132, 217, 0.25);
+
+  --color-draft: #b2b6ca;
+  --color-draft-text: #cfd3e5;
+  --color-draft-wash: rgba(147, 151, 171, 0.16);
+  --color-draft-ring: rgba(178, 182, 202, 0.32);
+
+  --color-approved: #7ac59d;
+  --color-approved-text: #a3dcbd;
+  --color-approved-wash: rgba(106, 181, 141, 0.14);
+  --color-approved-ring: rgba(122, 197, 157, 0.4);
+
+  --color-discarded: #d6837f;
+  --color-discarded-text: #e8b0ad;
+  --color-discarded-wash: rgba(198, 109, 105, 0.14);
+  --color-discarded-ring: rgba(214, 131, 127, 0.4);
+  --color-discarded-wash-soft: rgba(198, 109, 105, 0.09);
+  --color-discarded-ring-soft: rgba(214, 131, 127, 0.25);
+
+  --color-running: #b5abfc;
+  --color-running-text: #d2cefd;
+  --color-running-wash: rgba(145, 132, 217, 0.16);
+  --color-running-ring: rgba(145, 132, 217, 0.5);
+
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --color-canvas: #f4f6fc;
+    --color-bg: #fbfcfe;
+    --color-surface: #f4f6fc;
+    --color-surface-2: #fbfcfe;
+    --color-panel: #fbfcfe;
+    --color-feature: #f4f6fc;
+    --color-feature-discarded: #f0f1f8;
+
+    --color-border: #cfd3e5;
+    --color-border-soft: #e4e7f5;
+    --color-border-soft-2: #e4e7f5;
+    --color-border-soft-3: #e4e7f5;
+
+    --color-text: #292b31;
+    --color-text-2: #3f424d;
+    --color-text-3: #595d6c;
+    --color-text-4: #75798c;
+    --color-text-5: #75798c;
+    --color-text-6: #9397ab;
+
+    --color-accent: #796cbf;
+    --color-accent-soft: #5d5294;
+    --color-accent-strong: #5d5294;
+    --color-accent-pale: #5d5294;
+    --color-accent-wash: rgba(121, 108, 191, 0.05);
+    --color-accent-wash-2: rgba(121, 108, 191, 0.09);
+    --color-accent-ring: rgba(121, 108, 191, 0.45);
+    --color-accent-ring-soft: rgba(121, 108, 191, 0.3);
+
+    --color-draft: #75798c;
+    --color-draft-text: #595d6c;
+    --color-draft-wash: rgba(117, 121, 140, 0.12);
+    --color-draft-ring: rgba(117, 121, 140, 0.3);
+
+    --color-approved: #2f8a5c;
+    --color-approved-text: #1f6d48;
+    --color-approved-wash: rgba(31, 109, 72, 0.09);
+    --color-approved-ring: rgba(31, 109, 72, 0.28);
+
+    --color-discarded: #b0504b;
+    --color-discarded-text: #a4423d;
+    --color-discarded-wash: rgba(164, 66, 61, 0.09);
+    --color-discarded-ring: rgba(164, 66, 61, 0.28);
+    --color-discarded-wash-soft: rgba(164, 66, 61, 0.06);
+    --color-discarded-ring-soft: rgba(164, 66, 61, 0.2);
+
+    --color-running: #796cbf;
+    --color-running-text: #5d5294;
+    --color-running-wash: rgba(121, 108, 191, 0.09);
+    --color-running-ring: rgba(121, 108, 191, 0.4);
+  }
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-canvas: var(--color-canvas);
+  --color-bg: var(--color-bg);
+  --color-surface: var(--color-surface);
+  --color-surface-2: var(--color-surface-2);
+  --color-panel: var(--color-panel);
+  --color-feature: var(--color-feature);
+  --color-feature-discarded: var(--color-feature-discarded);
+
+  --color-border: var(--color-border);
+  --color-border-soft: var(--color-border-soft);
+  --color-border-soft-2: var(--color-border-soft-2);
+  --color-border-soft-3: var(--color-border-soft-3);
+
+  --color-text: var(--color-text);
+  --color-text-2: var(--color-text-2);
+  --color-text-3: var(--color-text-3);
+  --color-text-4: var(--color-text-4);
+  --color-text-5: var(--color-text-5);
+  --color-text-6: var(--color-text-6);
+
+  --color-accent: var(--color-accent);
+  --color-accent-soft: var(--color-accent-soft);
+  --color-accent-strong: var(--color-accent-strong);
+  --color-accent-pale: var(--color-accent-pale);
+  --color-accent-wash: var(--color-accent-wash);
+  --color-accent-wash-2: var(--color-accent-wash-2);
+  --color-accent-ring: var(--color-accent-ring);
+  --color-accent-ring-soft: var(--color-accent-ring-soft);
+
+  --color-draft: var(--color-draft);
+  --color-draft-text: var(--color-draft-text);
+  --color-draft-wash: var(--color-draft-wash);
+  --color-draft-ring: var(--color-draft-ring);
+
+  --color-approved: var(--color-approved);
+  --color-approved-text: var(--color-approved-text);
+  --color-approved-wash: var(--color-approved-wash);
+  --color-approved-ring: var(--color-approved-ring);
+
+  --color-discarded: var(--color-discarded);
+  --color-discarded-text: var(--color-discarded-text);
+  --color-discarded-wash: var(--color-discarded-wash);
+  --color-discarded-ring: var(--color-discarded-ring);
+  --color-discarded-wash-soft: var(--color-discarded-wash-soft);
+  --color-discarded-ring-soft: var(--color-discarded-ring-soft);
+
+  --color-running: var(--color-running);
+  --color-running-text: var(--color-running-text);
+  --color-running-wash: var(--color-running-wash);
+  --color-running-ring: var(--color-running-ring);
+
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-jetbrains-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@keyframes pulse-dot {
+  0%,
+  100% {
+    opacity: 0.35;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes sweep {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(300%);
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-canvas);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+}
+
+.hr-fade {
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--color-border-soft-2) 48px,
+    var(--color-border-soft-2) calc(100% - 48px),
+    transparent
+  );
 }

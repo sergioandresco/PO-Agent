@@ -440,6 +440,9 @@
         "featureId": {
           "type": "string"
         },
+        "title": {
+          "type": "string"
+        },
         "asA": {
           "type": "string"
         },
@@ -494,6 +497,7 @@
       "required": [
         "id",
         "featureId",
+        "title",
         "asA",
         "iWant",
         "soThat",

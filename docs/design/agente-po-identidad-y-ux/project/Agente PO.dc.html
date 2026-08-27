@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="stylesheet" href="_ds/nocturne-3b68c55a-46f3-4c79-b794-f83fb9012ffc/styles.css">
+<script src="_ds/nocturne-3b68c55a-46f3-4c79-b794-f83fb9012ffc/_ds_bundle.js"></script>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+  body { background: #101220; margin: 0; }
+  a { color: #b5abfc; }
+  a:hover { color: #d2cefd; }
+  @keyframes pulse { 0%,100% { opacity: .35 } 50% { opacity: 1 } }
+  @keyframes sweep { 0% { transform: translateX(-100%) } 100% { transform: translateX(300%) } }
+</style>
+</helmet>
+
+<section style="display:flex;flex-direction:column;gap:56px;padding:64px 72px 120px;background:#101220;color:#e9e9ed;font-family:Inter,system-ui,sans-serif;min-height:100vh">
+
+  <div id="1a" style="display:flex;flex-direction:column;gap:20px;max-width:1280px">
+    <div style="display:flex;align-items:center;gap:12px">
+      <span style="display:inline-flex;align-items:center;height:22px;padding:0 8px;border:1px solid #9184d9;border-radius:6px;color:#b5abfc;font-family:'JetBrains Mono',monospace;font-size:11px">1a</span>
+      <span style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#75798c">Agente PO · dirección visual + mockups</span>
+    </div>
+    <h1 style="font-size:44px;margin:0;max-width:22ch;letter-spacing:-.02em">Un backlog en el que puedes confiar de un vistazo.</h1>
+    <p style="margin:0;max-width:66ch;font-size:15px;color:#b2b6ca;text-wrap:pretty">Identidad y rediseño de las pantallas existentes — mismo flujo, mismos botones, mismos datos. El trabajo está en la jerarquía visual: que la profundidad épica → feature → historia se lea sin esfuerzo, que el estado de revisión sea evidente sin leer texto, y que verificar contra la transcripción cueste un clic.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:8px;font-size:12.5px;color:#9397ab">
+      <span>Boards:</span>
+      <a href="#b-identidad">Identidad</a><span>·</span>
+      <a href="#b-home">Home</a><span>·</span>
+      <a href="#b-dashboard">Dashboard</a><span>·</span>
+      <a href="#b-estados">Estados del job</a><span>·</span>
+      <a href="#b-historia">Anatomía de la historia</a><span>·</span>
+      <a href="#b-edicion">Modo edición</a><span>·</span>
+      <a href="#b-mobile">Mobile</a><span>·</span>
+      <a href="#b-claro">Modo claro</a>
+    </div>
+  </div>
+
+  <!-- ══ IDENTIDAD ══ -->
+  <div id="b-identidad" style="display:flex;flex-direction:column;gap:16px">
+    <div style="display:flex;flex-direction:column;gap:6px">
+      <span style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#9184d9">01 · Identidad</span>
+      <h2 style="margin:0;font-size:28px">Nocturne aplicado: blurple como línea, no como relleno</h2>
+      <p style="margin:0;max-width:72ch;font-size:13.5px;color:#9397ab;text-wrap:pretty">Superficies casi neutras, un solo acento. La herramienta no compite por atención: el color se reserva para el estado de revisión y para la trazabilidad. Nada de gradientes de marca ni ilustraciones.</p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1.15fr .85fr;gap:20px;align-items:start">
+
+      <div style="display:flex;flex-direction:column;gap:20px;padding:28px;border-radius:14px;background:#161826;box-shadow:0 0 0 1px #3f424d">
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <span style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#75798c">Superficies y acento</span>
+          <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:10px">
+            <div style="display:flex;flex-direction:column;gap:6px"><div style="height:64px;border-radius:8px;background:#101220;box-shadow:0 0 0 1px #3f424d"></div><span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#75798c">#101220<br>canvas</span></div>
+            <div style="display:flex;flex-direction:column;gap:6px"><div style="height:64px;border-radius:8px;background:#161826;box-shadow:0 0 0 1px #3f424d"></div><span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#75798c">#161826<br>bg</span></div>
+            <div style="display:flex;flex-direction:column;gap:6px"><div style="height:64px;border-radius:8px;background:#232532;box-shadow:0 0 0 1px #3f424d"></div><span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#75798c">#232532<br>surface</span></div>
+            <div style="display:flex;flex-direction:column;gap:6px"><div style="height:64px;border-radius:8px;background:#3f424d"></div><span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#75798c">#3f424d<br>borde</span></div>
+            <div style="display:flex;flex-direction:column;gap:6px"><div style="height:64px;border-radius:8px;background:#9184d9"></div><span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#75798c">#9184d9<br>acento</span></div>
+            <div style="display:flex;flex-direction:column;gap:6px"><div style="height:64px;border-radius:8px;background:#e9e9ed"></div><span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#75798c">#e9e9ed<br>texto</span></div>
+          </div>
+        </div>
+
+        <div style="height:1px;background:linear-gradient(to right,transparent,#3f424d 48px,#3f424d calc(100% - 48px),transparent)"></div>
+
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <span style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#75798c">Estado de revisión — la única otra fuente de color</span>
+          <div style="display:flex;flex-wrap:wrap;gap:20px">
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <span style="display:inline-flex;align-items:center;gap:7px;padding:4px 10px 4px 8px;border-radius:6px;background:rgba(147,151,171,.16);box-shadow:inset 0 0 0 1px rgba(178,182,202,.32);font-size:11.5px;color:#cfd3e5"><span style="width:7px;height:7px;border-radius:50%;background:#b2b6ca"></span>Borrador</span>
+              <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#75798c">draft · neutral #b2b6ca</span>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <span style="display:inline-flex;align-items:center;gap:7px;padding:4px 10px 4px 8px;border-radius:6px;background:rgba(106,181,141,.14);box-shadow:inset 0 0 0 1px rgba(122,197,157,.4);font-size:11.5px;color:#a3dcbd"><span style="width:7px;height:7px;border-radius:50%;background:#7ac59d"></span>Aprobado</span>
+              <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#75798c">approved · verde #7ac59d</span>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <span style="display:inline-flex;align-items:center;gap:7px;padding:4px 10px 4px 8px;border-radius:6px;background:rgba(198,109,105,.14);box-shadow:inset 0 0 0 1px rgba(214,131,127,.4);font-size:11.5px;color:#e8b0ad"><span style="width:7px;height:7px;border-radius:50%;background:#d6837f"></span>Descartado</span>
+              <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#75798c">discarded · rojo #d6837f</span>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <span style="display:inline-flex;align-items:center;gap:7px;padding:4px 10px;border-radius:6px;background:rgba(145,132,217,.16);box-shadow:inset 0 0 0 1px rgba(145,132,217,.45);font-size:11.5px;color:#d2cefd">Procesando</span>
+              <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#75798c">running · acento</span>
+            </div>
+          </div>
+          <p style="margin:0;max-width:70ch;font-size:12.5px;color:#75798c;text-wrap:pretty">Baja croma a propósito: el verde y el rojo son de la misma familia perceptual que los neutros, así que veinte tarjetas no se convierten en un semáforo. El punto de color lleva el estado; el texto solo lo confirma.</p>
+        </div>
+
+        <div style="height:1px;background:linear-gradient(to right,transparent,#3f424d 48px,#3f424d calc(100% - 48px),transparent)"></div>
+
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <span style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#75798c">Tipografía · Inter + JetBrains Mono</span>
+          <div style="display:flex;flex-direction:column;gap:2px">
+            <span style="font-size:34px;font-weight:500;letter-spacing:-.02em;line-height:1.1">Rediseño del checkout</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#75798c">Inter 500 · 34/37 · título de épica</span>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:2px">
+            <span style="font-size:17px;font-weight:500">Guardar método de pago preferido</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#75798c">Inter 500 · 17/20 · título de historia</span>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:2px">
+            <span style="font-size:14px;color:#cfd3e5;max-width:56ch">Dado que tengo una tarjeta guardada, cuando abro el checkout, entonces aparece preseleccionada.</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#75798c">Inter 400 · 14/22 · cuerpo y criterios</span>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:2px">
+            <span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#b5abfc">Ana (PM): “que la tarjeta ya venga seleccionada”</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#75798c">JetBrains Mono 400 · 13/21 · citas, IDs, etapas, JSON</span>
+          </div>
+          <p style="margin:0;max-width:70ch;font-size:12.5px;color:#75798c;text-wrap:pretty">El mono no es decorativo: marca todo lo que viene <em>literal</em> del sistema o de la reunión — jobId, meetingId, nombres de etapa, citas de la transcripción, JSON. Si está en mono, no lo escribió el diseño ni el PO.</p>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:14px;padding:24px;border-radius:14px;background:#161826;box-shadow:0 0 0 1px #3f424d">
+        <span style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#75798c">Tono · español neutro, directo</span>
+        <div style="display:flex;flex-direction:column;gap:12px;font-size:13px">
+          <div style="display:flex;flex-direction:column;gap:3px"><span style="color:#a3dcbd">“Generar backlog”</span><span style="color:#75798c">no “Comenzar tu viaje de descubrimiento”</span></div>
+          <div style="display:flex;flex-direction:column;gap:3px"><span style="color:#a3dcbd">“Todavía no hay reuniones procesadas.”</span><span style="color:#75798c">el vacío se nombra, no se disculpa</span></div>
+          <div style="display:flex;flex-direction:column;gap:3px"><span style="color:#a3dcbd">“El archivo se lee en tu navegador, nunca se sube.”</span><span style="color:#75798c">la ayuda dice qué pasa, no qué es seguro</span></div>
+          <div style="display:flex;flex-direction:column;gap:3px"><span style="color:#e8b0ad">Sin emoji en la UI</span><span style="color:#75798c">⚠ y ❓ del contenido se sustituyen por etiquetas tipográficas: Riesgos / Preguntas abiertas</span></div>
+        </div>
+        <div style="height:1px;background:linear-gradient(to right,transparent,#3f424d 48px,#3f424d calc(100% - 48px),transparent)"></div>
+        <span style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#75798c">Reglas de layout</span>
+        <ul style="margin:0;padding-left:18px;display:flex;flex-direction:column;gap:8px;font-size:12.5px;color:#b2b6ca">
+          <li>Todo alineado a la izquierda, sin centrado; el contenido pega al borde izquierdo y el aire queda a la derecha.</li>
+          <li>Radios 8px, bordes de 1px, sombras solo como hairline + oscuridad ambiental.</li>
+          <li>Acciones primarias con contorno de acento, nunca relleno saturado.</li>
+          <li>Densidad 0.7×: escala de espacio 2.8 / 5.6 / 8.4 / 11.2 / 16.8 / 22.4 px.</li>
+          <li>La profundidad de la jerarquía se dibuja con un riel vertical de 1px, no con cajas dentro de cajas.</li>
+        </ul>
+        <div style="height:1px;background:linear-gradient(to right,transparent,#3f424d 48px,#3f424d calc(100% - 48px),transparent)"></div>
+        <span style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#75798c">Clerk · prop appearance</span>
+        <div style="display:flex;flex-direction:column;gap:6px;font-family:'JetBrains Mono',monospace;font-size:11.5px;color:#b5abfc;background:#232532;border-radius:8px;padding:12px;box-shadow:inset 0 0 0 1px #3f424d">
+          <span>baseTheme: dark</span>
+          <span>colorPrimary: #9184d9</span>
+          <span>colorBackground: #161826</span>
+          <span>colorText: #e9e9ed</span>
+          <span>borderRadius: 8px</span>
+          <span>fontFamily: Inter</span>
+        </div>
+        <p style="margin:0;font-size:12.5px;color:#75798c;text-wrap:pretty">Los botones de Clerk se tematizan, no se rediseñan: <code style="font-family:'JetBrains Mono',monospace;color:#b2b6ca">elements.formButtonPrimary</code> toma el contorno de acento para que el sign-in no se sienta de otra app.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ HOME ══ -->
+  <div id="b-home" style="display:flex;flex-direction:column;gap:16px">
+    <div style="display:flex;flex-direction:column;gap:6px">
+      <span style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#9184d9">02 · Home pública <span style="color:#75798c;text-transform:none;letter-spacing:0;font-family:'JetBrains Mono',monospace">/</span></span>
+      <h2 style="margin:0;font-size:28px">Cuatro elementos: título, párrafo, botón, header</h2>
+      <p style="margin:0;max-width:72ch;font-size:13.5px;color:#9397ab;text-wrap:pretty">No inventé secciones. La página vive de escala tipográfica y aire; el único elemento visual es un fragmento real del formato de transcripción que la app reconoce, apagado al 30%, como textura. Si quieres una home más larga (cómo funciona, ejemplo, precios) dime y la diseño.</p>
+    </div>
+    <div style="width:1280px;border-radius:14px;overflow:hidden;background:#161826;box-shadow:0 0 0 1px #3f424d,0 18px 40px rgba(0,0,0,.45)">
+      <div style="display:flex;align-items:center;gap:14px;padding:14px 28px;border-bottom:1px solid rgba(233,233,237,.08)">
+        <span style="display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:7px;box-shadow:inset 0 0 0 1px #9184d9;font-family:'JetBrains Mono',monospace;font-size:11px;color:#b5abfc">PO</span>
+        <span style="font-size:15px;font-weight:500;margin-right:auto;letter-spacing:-.01em">Agente PO</span>
+        <span style="display:inline-flex;align-items:center;height:32px;padding:0 12px;border-radius:8px;font-size:13.5px;color:#cfd3e5">Sign in</span>
+        <span style="display:inline-flex;align-items:center;height:32px;padding:0 14px;border-radius:8px;box-shadow:inset 0 0 0 1px #9184d9;font-size:13.5px;color:#b5abfc">Sign up</span>
+      </div>
+      <div style="position:relative;display:grid;grid-template-columns:1fr 380px;gap:48px;padding:104px 28px 112px 68px">
+        <div style="display:flex;flex-direction:column;gap:28px;align-items:flex-start">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.06em;color:#75798c">TRANSCRIPCIÓN → BACKLOG TRAZABLE</span>
+          <h1 style="margin:0;font-size:60px;line-height:1.05;letter-spacing:-.03em;max-width:20ch">Agente PO</h1>
+          <p style="margin:0;max-width:52ch;font-size:17px;line-height:1.6;color:#cfd3e5;text-wrap:pretty">Convierte la transcripción de una reunión en un backlog trazable: épicas, historias de usuario y criterios de aceptación, cada uno respaldado por el fragmento exacto de la transcripción que lo origina.</p>
+          <span style="display:inline-flex;align-items:center;gap:8px;height:42px;padding:0 20px;border-radius:8px;box-shadow:inset 0 0 0 1px #9184d9;font-size:14.5px;font-weight:500;color:#b5abfc">Ir al dashboard <span style="font-family:'JetBrains Mono',monospace">→</span></span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:10px;padding-top:12px;font-family:'JetBrains Mono',monospace;font-size:12.5px;line-height:1.7;color:#595d6c;opacity:.85;overflow:hidden;mask-image:linear-gradient(to bottom,#000 40%,transparent)">
+          <span>[00:00:03] Ana (Product Manager):</span>
+          <span style="padding-left:14px">necesitamos que el checkout recuerde la tarjeta</span>
+          <span>[00:00:21] Luis (Tech Lead):</span>
+          <span style="padding-left:14px">el servicio de tokenización ya existe, es reusar</span>
+          <span>[00:00:44] Ana (Product Manager):</span>
+          <span style="padding-left:14px">si la rechazan hay que pedir CVV otra vez</span>
+          <span>[00:01:02] Mara (QA):</span>
+          <span style="padding-left:14px">¿y en compra como invitado?</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ DASHBOARD ══ -->
+  <div id="b-dashboard" style="display:flex;flex-direction:column;gap:16px">
+    <div style="display:flex;flex-direction:column;gap:6px">
+      <span style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#9184d9">03 · Dashboard <span style="color:#75798c;text-transform:none;letter-spacing:0;font-family:'JetBrains Mono',monospace">/dashboard</span> — job completado</span>
+      <h2 style="margin:0;font-size:28px">Dos columnas, un riel de jerarquía, revisión al alcance</h2>
+      <p style="margin:0;max-width:72ch;font-size:13.5px;color:#9397ab;text-wrap:pretty">Con el job completo el formulario se pliega a una sola fila (mismo formulario, colapsado) para que el backlog empiece arriba. La barra del job y las exportaciones quedan pegajosas al hacer scroll: siempre sabes qué reunión estás revisando y puedes exportar sin volver arriba.</p>
+    </div>
+
+    <div style="width:1280px;border-radius:14px;overflow:hidden;background:#161826;box-shadow:0 0 0 1px #3f424d,0 18px 40px rgba(0,0,0,.45)">
+      <div style="display:flex;align-items:center;gap:14px;padding:12px 24px;border-bottom:1px solid rgba(233,233,237,.08)">
+        <span style="display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:7px;box-shadow:inset 0 0 0 1px #9184d9;font-family:'JetBrains Mono',monospace;font-size:11px;color:#b5abfc">PO</span>
+        <span style="font-size:15px;font-weight:500;letter-spacing:-.01em">Agente PO</span>
+        <span style="margin-right:auto;font-size:13px;color:#75798c">Dashboard</span>
+        <span style="font-size:12.5px;color:#75798c">Sesión activa: <span style="font-family:'JetBrains Mono',monospace;color:#b2b6ca">ana@equipo.mx</span></span>
+        <span style="width:28px;height:28px;border-radius:50%;background:#3f424d;box-shadow:inset 0 0 0 1px #595d6c"></span>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 288px;gap:0;align-items:start">
+
+        <!-- main -->
+        <div style="display:flex;flex-direction:column;gap:16px;padding:22px 24px 40px">
+
+          <!-- formulario colapsado -->
+          <div style="display:flex;align-items:center;gap:12px;padding:11px 14px;border-radius:8px;background:#1b1d2b;box-shadow:inset 0 0 0 1px #3f424d">
+            <span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#75798c">+</span>
+            <span style="font-size:13.5px;font-weight:500;margin-right:auto">Nueva reunión</span>
+            <span style="font-size:12px;color:#75798c">pegar transcripción o subir .txt</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#9397ab">⌄</span>
+          </div>
+
+          <!-- barra del job + export -->
+          <div style="display:flex;flex-direction:column;gap:12px;padding:14px 16px;border-radius:8px;background:#1b1d2b;box-shadow:inset 0 0 0 1px #3f424d">
+            <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+              <span style="display:inline-flex;align-items:center;gap:7px;padding:4px 10px 4px 8px;border-radius:6px;background:rgba(106,181,141,.14);box-shadow:inset 0 0 0 1px rgba(122,197,157,.4);font-size:11.5px;color:#a3dcbd"><span style="width:7px;height:7px;border-radius:50%;background:#7ac59d"></span>Completado</span>
+              <span style="font-size:14px;font-weight:500">checkout-v2-kickoff</span>
+              <span style="font-family:'JetBrains Mono',monospace;font-size:11.5px;color:#75798c">job 8f3a91c4 · 7/7 etapas · 1m 48s</span>
+              <div style="display:flex;gap:8px;margin-left:auto">
+                <span style="display:inline-flex;align-items:center;height:30px;padding:0 12px;border-radius:8px;box-shadow:inset 0 0 0 1px rgba(233,233,237,.16);font-size:12.5px;color:#cfd3e5">Exportar JSON</span>
+                <span style="display:inline-flex;align-items:center;height:30px;padding:0 12px;border-radius:8px;box-shadow:inset 0 0 0 1px #9184d9;font-size:12.5px;color:#b5abfc">Exportar Markdown</span>
+                <span style="display:inline-flex;align-items:center;height:30px;padding:0 12px;border-radius:8px;box-shadow:inset 0 0 0 1px rgba(233,233,237,.16);font-size:12.5px;color:#cfd3e5">Exportar CSV</span>
+              </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:16px;font-size:12px;color:#9397ab">
+              <span style="display:flex;align-items:center;gap:6px"><span style="width:7px;height:7px;border-radius:50%;background:#7ac59d"></span>5 aprobadas</span>
+              <span style="display:flex;align-items:center;gap:6px"><span style="width:7px;height:7px;border-radius:50%;background:#b2b6ca"></span>6 en borrador</span>
+              <span style="display:flex;align-items:center;gap:6px"><span style="width:7px;height:7px;border-radius:50%;background:#d6837f"></span>1 descartada</span>
+              <span style="flex:1;max-width:280px;display:flex;height:4px;border-radius:2px;overflow:hidden;background:rgba(233,233,237,.08)"><span style="width:42%;background:#7ac59d"></span><span style="width:50%;background:#595d6c"></span><span style="width:8%;background:#d6837f"></span></span>
+              <span style="color:#75798c">12 historias en 2 épicas</span>
+            </div>
+          </div>
+
+          <!-- ÉPICA 1 -->
+          <div style="display:flex;flex-direction:column;gap:14px;padding:18px 18px 20px;border-radius:8px;background:#191b28;box-shadow:inset 0 0 0 1px #3f424d">
+            <div style="display:flex;align-items:flex-start;gap:12px">
+              <span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#9397ab;padding-top:6px">⌄</span>
+              <div style="display:flex;flex-direction:column;gap:6px;margin-right:auto">
+                <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.08em;color:#75798c">ÉPICA 1 · 2 features · 8 historias</span>
+                <div style="display:flex;align-items:center;gap:10px">
+                  <h3 style="margin:0;font-size:23px;letter-spacing:-.015em">Rediseño del checkout</h3>
+                  <span style="display:inline-flex;align-items:center;gap:7px;padding:3px 9px 3px 7px;border-radius:6px;background:rgba(106,181,141,.14);box-shadow:inset 0 0 0 1px rgba(122,197,157,.4);font-size:11px;color:#a3dcbd"><span style="width:6px;height:6px;border-radius:50%;background:#7ac59d"></span>Aprobado</span>
+                </div>
+              </div>
+              <div style="display:flex;gap:4px;padding-top:4px">
+                <span style="display:inline-flex;align-items:center;height:28px;padding:0 10px;border-radius:7px;font-size:12px;color:#cfd3e5;box-shadow:inset 0 0 0 1px rgba(233,233,237,.14)">Editar</span>
+                <span style="display:inline-flex;align-items:center;height:28px;padding:0 10px;border-radius:7px;font-size:12px;color:#a3dcbd;opacity:.45">Aprobar</span>
+                <span style="display:inline-flex;align-items:center;height:28px;padding:0 10px;border-radius:7px;font-size:12px;color:#e8b0ad">Descartar</span>
+              </div>
+            </div>
+            <p style="margin:0 0 0 25px;max-width:82ch;font-size:13.5px;color:#b2b6ca;text-wrap:pretty">Reducir la fricción del pago para clientes recurrentes: menos campos por escribir, más contexto recordado entre compras.</p>
+
+            <!-- riel de features -->
+            <div style="display:flex;flex-direction:column;gap:12px;margin-left:25px;padding-left:18px;border-left:1px solid rgba(233,233,237,.1)">
+
+              <!-- FEATURE (con historias) -->
+              <div style="display:flex;flex-direction:column;gap:12px;border-radius:8px;background:#1e202e;box-shadow:inset 0 0 0 1px #3f424d;border-left:2px solid #9184d9;padding:14px 16px 16px">
+                <div style="display:flex;align-items:flex-start;gap:12px">
+                  <div style="display:flex;flex-direction:column;gap:5px;margin-right:auto">
+                    <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.08em;color:#75798c">FEATURE · 3 historias</span>
+                    <div style="display:flex;align-items:center;gap:10px">
+                      <h4 style="margin:0;font-size:18px">Pago con un clic</h4>
+                      <span style="display:inline-flex;align-items:center;gap:7px;padding:3px 9px 3px 7px;border-radius:6px;background:rgba(147,151,171,.16);box-shadow:inset 0 0 0 1px rgba(178,182,202,.32);font-size:11px;color:#cfd3e5"><span style="width:6px;height:6px;border-radius:50%;background:#b2b6ca"></span>Borrador</span>
+                    </div>
+                  </div>
+                  <div style="display:flex;gap:4px">
+                    <span style="display:inline-flex;align-items:center;height:26px;padding:0 10px;border-radius:7px;font-size:12px;color:#cfd3e5;box-shadow:inset 0 0 0 1px rgba(233,233,237,.14)">Editar</span>
+                    <span style="display:inline-flex;align-items:center;height:26px;padding:0 10px;border-radius:7px;font-size:12px;color:#a3dcbd">Aprobar</span>
+                    <span style="display:inline-flex;align-items:center;height:26px;padding:0 10px;border-radius:7px;font-size:12px;color:#e8b0ad">Descartar</span>
+                  </div>
+                </div>
+                <p style="margin:0;max-width:78ch;font-size:13px;color:#9397ab">Guardar y reutilizar el método de pago del cliente, con reintento seguro cuando el cobro falla.</p>
+
+                <div style="display:flex;flex-direction:column;gap:10px">
+
+                  <!-- HISTORIA aprobada, expandida -->
+                  <div style="display:flex;flex-direction:column;gap:12px;padding:14px 16px;border-radius:8px;background:#232532;box-shadow:inset 0 0 0 1px #3f424d">
+                    <div style="display:flex;align-items:flex-start;gap:12px">
+                      <div style="display:flex;align-items:center;gap:10px;margin-right:auto;flex-wrap:wrap">
+                        <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#75798c">US-01</span>
+                        <span style="font-size:16px;font-weight:500">Guardar método de pago preferido</span>
+                        <span style="display:inline-flex;align-items:center;gap:7px;padding:3px 9px 3px 7px;border-radius:6px;background:rgba(106,181,141,.14);box-shadow:inset 0 0 0 1px rgba(122,197,157,.4);font-size:11px;color:#a3dcbd"><span style="width:6px;height:6px;border-radius:50%;background:#7ac59d"></span>Aprobado</span>
+                      </div>
+                      <span style="display:inline-flex;align-items:baseline;gap:4px;padding:3px 9px;border-radius:6px;box-shadow:inset 0 0 0 1px rgba(145,132,217,.5);font-family:'JetBrains Mono',monospace;font-size:12px;color:#b5abfc">5<span style="font-size:10px;color:#9397ab">pts</span></span>
+                      <div style="display:flex;gap:4px">
+                        <span style="display:inline-flex;align-items:center;height:26px;padding:0 10px;border-radius:7px;font-size:12px;color:#cfd3e5;box-shadow:inset 0 0 0 1px rgba(233,233,237,.14)">Editar</span>
+                        <span style="display:inline-flex;align-items:center;height:26px;padding:0 10px;border-radius:7px;font-size:12px;color:#a3dcbd;opacity:.45">Aprobar</span>
+                        <span style="display:inline-flex;align-items:center;height:26px;padding:0 10px;border-radius:7px;font-size:12px;color:#e8b0ad">Descartar</span>
+                      </div>
+                    </div>
+
+                    <div style="display:grid;grid-template-columns:auto 1fr;gap:4px 12px;padding-left:2px;font-size:13.5px;line-height:1.5">
+                      <span style="font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#75798c;padding-top:4px">Como</span><span style="color:#e9e9ed">cliente recurrente de la tienda</span>
+                      <span style="font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#75798c;padding-top:4px">Quiero</span><span style="color:#e9e9ed">que mi tarjeta guardada aparezca preseleccionada en el checkout</span>
+                      <span style="font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#75798c;padding-top:4px">Para</span><span style="color:#e9e9ed">no volver a escribir mis datos en cada compra</span>
+                    </div>
+
+                    <div style="display:grid;grid-template-columns:1.35fr 1fr;gap:20px">
+                      <div style="display:flex;flex-direction:column;gap:8px">
+                        <span style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#9397ab">Criterios de aceptación</span>
+                        <ol style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:7px">
+                          <li style="display:grid;grid-template-columns:18px 1fr;gap:8px;font-size:13px;line-height:1.5;color:#cfd3e5"><span style="font-family:'JetBrains Mono',monospace;font-size:11.5px;color:#75798c;padding-top:2px">01</span><span><span style="color:#9397ab">Dado que</span> tengo una tarjeta guardada, <span style="color:#9397ab">cuando</span> abro el checkout, <span style="color:#9397ab">entonces</span> aparece preseleccionada con los últimos 4 dígitos.</span></li>
+                          <li style="display:grid;grid-template-columns:18px 1fr;gap:8px;font-size:13px;line-height:1.5;color:#cfd3e5"><span style="font-family:'JetBrains Mono',monospace;font-size:11.5px;color:#75798c;padding-top:2px">02</span><span><span style="color:#9397ab">Dado que</span> tengo dos o más tarjetas, <span style="color:#9397ab">cuando</span> toco “cambiar”, <span style="color:#9397ab">entonces</span> veo la lista ordenada por último uso.</span></li>
+                          <li style="display:grid;grid-template-columns:18px 1fr;gap:8px;font-size:13px;line-height:1.5;color:#cfd3e5"><span style="font-family:'JetBrains Mono',monospace;font-size:11.5px;color:#75798c;padding-top:2px">03</span><span><span style="color:#9397ab">Dado que</span> la tarjeta fue rechazada, <span style="color:#9397ab">cuando</span> reintento el pago, <span style="color:#9397ab">entonces</span> se me pide el CVV antes de cobrar.</span></li>
+                        </ol>
+                      </div>
+                      <div style="display:flex;flex-direction:column;gap:14px">
+                        <div style="display:flex;flex-direction:column;gap:8px">
+                          <span style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#9397ab">Subtareas</span>
+                          <div style="display:flex;flex-direction:column;gap:6px;font-size:12.5px;color:#cfd3e5">
+                            <span style="display:flex;align-items:center;gap:8px"><span style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.04em;padding:2px 6px;border-radius:4px;background:rgba(145,132,217,.14);color:#b5abfc;min-width:74px;text-align:center">frontend</span>Selector con método preseleccionado</span>
+                            <span style="display:flex;align-items:center;gap:8px"><span style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.04em;padding:2px 6px;border-radius:4px;background:rgba(147,151,171,.16);color:#cfd3e5;min-width:74px;text-align:center">backend</span>GET /payment-methods</span>
+                            <span style="display:flex;align-items:center;gap:8px"><span style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.04em;padding:2px 6px;border-radius:4px;background:rgba(147,151,171,.16);color:#cfd3e5;min-width:74px;text-align:center">database</span>Índice user_id + last_used_at</span>
+                            <span style="display:flex;align-items:center;gap:8px"><span style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.04em;padding:2px 6px;border-radius:4px;background:rgba(147,151,171,.16);color:#cfd3e5;min-width:74px;text-align:center">qa</span>Casos de tarjeta rechazada</span>
+                          </div>
+                        </div>
+                        <div style="display:flex;flex-direction:column;gap:4px">
+                          <span style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#9397ab">Estimación</span>
+                          <span style="font-size:12.5px;color:#b2b6ca">5 pts — reusa el servicio de tokenización; el riesgo está en el reintento con CVV.</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div style="display:flex;flex-wrap:wrap;gap:10px">
+                      <span style="display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:6px;background:rgba(198,109,105,.09);box-shadow:inset 0 0 0 1px rgba(214,131,127,.25);font-size:12.5px;color:#cfd3e5"><span style="font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#e8b0ad">Riesgo</span>Cumplimiento PCI al mostrar los últimos 4 dígitos desde caché.</span>
+                      <span style="display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:6px;background:rgba(145,132,217,.09);box-shadow:inset 0 0 0 1px rgba(145,132,217,.25);font-size:12.5px;color:#cfd3e5"><span style="font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#b5abfc">Pregunta</span>¿Se preselecciona también en compra como invitado?</span>
+                    </div>
+
+                    <div style="display:flex;align-items:center;gap:8px;padding-top:2px">
+                      <span style="display:inline-flex;align-items:center;gap:7px;padding:5px 10px;border-radius:6px;box-shadow:inset 0 0 0 1px rgba(145,132,217,.4);font-size:12px;color:#b5abfc"><span style="font-family:'JetBrains Mono',monospace;font-size:11px">›</span>Ver fuente (2)</span>
+                      <span style="font-size:11.5px;color:#75798c">Ana (PM), Luis (Tech Lead) · 00:00–01:02</span>
+                    </div>
+                  </div>
+
+                  <!-- HISTORIA borrador, colapsada -->
+                  <div style="display:flex;align-items:center;gap:12px;padding:12px 16px;border-radius:8px;background:#232532;box-shadow:inset 0 0 0 1px #3f424d">
+                    <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#75798c">US-02</span>
+                    <span style="font-size:15px;font-weight:500">Autocompletar dirección de envío</span>
+                    <span style="display:inline-flex;align-items:center;gap:7px;padding:3px 9px 3px 7px;border-radius:6px;background:rgba(147,151,171,.16);box-shadow:inset 0 0 0 1px rgba(178,182,202,.32);font-size:11px;color:#cfd3e5"><span style="width:6px;height:6px;border-radius:50%;background:#b2b6ca"></span>Borrador</span>
+                    <span style="font-size:11.5px;color:#75798c;margin-right:auto">3 criterios · 3 subtareas · 2 fuentes</span>
+                    <span style="display:inline-flex;align-items:baseline;gap:4px;padding:3px 9px;border-radius:6px;box-shadow:inset 0 0 0 1px rgba(145,132,217,.5);font-family:'JetBrains Mono',monospace;font-size:12px;color:#b5abfc">3<span style="font-size:10px;color:#9397ab">pts</span></span>
+                    <div style="display:flex;gap:4px">
+                      <span style="display:inline-flex;align-items:center;height:26px;padding:0 10px;border-radius:7px;font-size:12px;color:#cfd3e5;box-shadow:inset 0 0 0 1px rgba(233,233,237,.14)">Editar</span>
+                      <span style="display:inline-flex;align-items:center;height:26px;padding:0 10px;border-radius:7px;font-size:12px;color:#a3dcbd">Aprobar</span>
+                      <span style="display:inline-flex;align-items:center;height:26px;padding:0 10px;border-radius:7px;font-size:12px;color:#e8b0ad">Descartar</span>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <!-- FEATURE descartada -->
+              <div style="display:flex;align-items:center;gap:12px;border-radius:8px;background:#1c1d29;box-shadow:inset 0 0 0 1px #3f424d;border-left:2px solid rgba(214,131,127,.55);padding:12px 16px;opacity:.72">
+                <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.08em;color:#75798c">FEATURE</span>
+                <span style="font-size:16px;font-weight:500;text-decoration:line-through;text-decoration-color:rgba(214,131,127,.7)">Recuperación de carrito por correo</span>
+                <span style="display:inline-flex;align-items:center;gap:7px;padding:3px 9px 3px 7px;border-radius:6px;background:rgba(198,109,105,.14);box-shadow:inset 0 0 0 1px rgba(214,131,127,.4);font-size:11px;color:#e8b0ad"><span style="width:6px;height:6px;border-radius:50%;background:#d6837f"></span>Descartado</span>
+                <span style="font-size:11.5px;color:#75798c;margin-right:auto">2 historias ocultas</span>
+                <div style="display:flex;gap:4px">
+                  <span style="display:inline-flex;align-items:center;height:26px;padding:0 10px;border-radius:7px;font-size:12px;color:#cfd3e5;box-shadow:inset 0 0 0 1px rgba(233,233,237,.14)">Editar</span>
+                  <span style="display:inline-flex;align-items:center;height:26px;padding:0 10px;border-radius:7px;font-size:12px;color:#a3dcbd">Aprobar</span>
+                  <span style="display:inline-flex;align-items:center;height:26px;padding:0 10px;border-radius:7px;font-size:12px;color:#e8b0ad;opacity:.45">Descartar</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- ÉPICA 2 colapsada -->
+          <div style="display:flex;align-items:center;gap:12px;padding:16px 18px;border-radius:8px;background:#191b28;box-shadow:inset 0 0 0 1px #3f424d">
+            <span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#9397ab">›</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.08em;color:#75798c">ÉPICA 2</span>
+            <h3 style="margin:0;font-size:20px;letter-spacing:-.015em">Panel de métricas de conversión</h3>
+            <span style="display:inline-flex;align-items:center;gap:7px;padding:3px 9px 3px 7px;border-radius:6px;background:rgba(147,151,171,.16);box-shadow:inset 0 0 0 1px rgba(178,182,202,.32);font-size:11px;color:#cfd3e5"><span style="width:6px;height:6px;border-radius:50%;background:#b2b6ca"></span>Borrador</span>
+            <span style="font-size:11.5px;color:#75798c;margin-right:auto">1 feature · 4 historias</span>
+            <div style="display:flex;gap:4px">
+              <span style="display:inline-flex;align-items:center;height:28px;padding:0 10px;border-radius:7px;font-size:12px;color:#cfd3e5;box-shadow:inset 0 0 0 1px rgba(233,233,237,.14)">Editar</span>
+              <span style="display:inline-flex;align-items:center;height:28px;padding:0 10px;border-radius:7px;font-size:12px;color:#a3dcbd">Aprobar</span>
+              <span style="display:inline-flex;align-items:center;height:28px;padding:0 10px;border-radius:7px;font-size:12px;color:#e8b0ad">Descartar</span>
+            </div>
+          </div>
+
+          <div style="display:flex;align-items:center;gap:8px;padding:10px 14px;border-radius:8px;box-shadow:inset 0 0 0 1px rgba(233,233,237,.1);font-family:'JetBrains Mono',monospace;font-size:12px;color:#9397ab">
+            <span>›</span> Ver JSON crudo <span style="color:#595d6c">· BacklogResult</span>
+          </div>
+        </div>
+
+        <!-- sidebar -->
+        <div style="display:flex;flex-direction:column;gap:10px;padding:22px 20px 40px;border-left:1px solid rgba(233,233,237,.08);align-self:stretch">
+          <div style="display:flex;align-items:baseline;gap:8px">
+            <span style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#9397ab">Mis reuniones</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#595d6c;margin-left:auto">4</span>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:6px">
+            <div style="display:flex;flex-direction:column;gap:5px;padding:10px 12px;border-radius:8px;background:#232532;box-shadow:inset 0 0 0 1px rgba(145,132,217,.55)">
+              <div style="display:flex;align-items:center;gap:8px"><span style="width:6px;height:6px;border-radius:50%;background:#7ac59d"></span><span style="font-size:13px;font-weight:500">checkout-v2-kickoff</span></div>
+              <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#75798c">Completado · hoy 11:24</span>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:5px;padding:10px 12px;border-radius:8px;box-shadow:inset 0 0 0 1px rgba(233,233,237,.08)">
+              <div style="display:flex;align-items:center;gap:8px"><span style="width:6px;height:6px;border-radius:50%;background:#7ac59d"></span><span style="font-size:13px;color:#cfd3e5">refinamiento-notifs</span></div>
+              <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#75798c">Completado · ayer 16:02</span>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:5px;padding:10px 12px;border-radius:8px;box-shadow:inset 0 0 0 1px rgba(233,233,237,.08)">
+              <div style="display:flex;align-items:center;gap:8px"><span style="width:6px;height:6px;border-radius:50%;background:#d6837f"></span><span style="font-size:13px;color:#cfd3e5">daily-2026-08-19</span></div>
+              <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#75798c">Falló · 19 ago 09:41</span>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:5px;padding:10px 12px;border-radius:8px;box-shadow:inset 0 0 0 1px rgba(233,233,237,.08)">
+              <div style="display:flex;align-items:center;gap:8px"><span style="width:6px;height:6px;border-radius:50%;background:#9397ab"></span><span style="font-size:13px;color:#cfd3e5">discovery-pagos</span></div>
+              <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#75798c">Completado · 14 ago 10:10</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:1280px">
+      <div style="display:flex;flex-direction:column;gap:5px"><span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#9184d9">a</span><span style="font-size:12.5px;color:#b2b6ca;text-wrap:pretty">La fila de recuento (aprobadas / borrador / descartadas + barra) es el “de un vistazo”: se calcula de datos que ya tienes, sin backend nuevo.</span></div>
+      <div style="display:flex;flex-direction:column;gap:5px"><span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#9184d9">b</span><span style="font-size:12.5px;color:#b2b6ca;text-wrap:pretty">Historias aprobadas o descartadas se colapsan a una fila; solo lo que falta revisar queda expandido. El PO ve su pendiente, no todo el volumen.</span></div>
+      <div style="display:flex;flex-direction:column;gap:5px"><span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#9184d9">c</span><span style="font-size:12.5px;color:#b2b6ca;text-wrap:pretty">Descartado = tachado + opacidad 72%, nunca borrado: sigue exportable y reversible con “Aprobar”.</span></div>
+    </div>
+  </div>
+
+  <!-- ══ ESTADOS ══ -->
+  <div id="b-estados" style="display:flex;flex-direction:column;gap:16px">
+    <div style="display:flex;flex-direction:column;gap:6px">
+      <span style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#9184d9">04 · Estados</span>
+      <h2 style="margin:0;font-size:28px">Primera visita, job corriendo, job fallido</h2>
+      <p style="margin:0;max-width:72ch;font-size:13.5px;color:#9397ab;text-wrap:pretty">Las 7 etapas se muestran como una sola línea con nodos, no como lista de logs: en un vistazo se ve dónde va y cuánto falta. Mientras corre, el lugar del backlog lo ocupan esqueletos de la jerarquía real — la pantalla no salta cuando llega el resultado.</p>
+    </div>
+
+    <div style="width:1280px;border-radius:14px;overflow:hidden;background:#161826;box-shadow:0 0 0 1px #3f424d,0 18px 40px rgba(0,0,0,.45)">
+      <div style="display:flex;align-items:center;gap:14px;padding:12px 24px;border-bottom:1px solid rgba(233,233,237,.08)">
+        <span style="display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:7px;box-shadow:inset 0 0 0 1px #9184d9;font-family:'JetBrains Mono',monospace;font-size:11px;color:#b5abfc">PO</span>
+        <span style="font-size:15px;font-weight:500;margin-right:auto">Agente PO</span>
+        <span style="font-size:12.5px;color:#75798c">Sesión activa: <span style="font-family:'JetBrains Mono',monospace;color:#b2b6ca">ana@equipo.mx</span></span>
+        <span style="width:28px;height:28px;border-radius:50%;background:#3f424d;box-shadow:inset 0 0 0 1px #595d6c"></span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 288px">
+        <div style="display:flex;flex-direction:column;gap:16px;padding:22px 24px 36px">
+
+          <!-- formulario expandido -->
+          <div style="display:flex;flex-direction:column;gap:14px;padding:18px;border-radius:8px;background:#1b1d2b;box-shadow:inset 0 0 0 1px #3f424d">
+            <div style="display:flex;align-items:baseline;gap:10px">
+              <h4 style="margin:0;font-size:17px">Nueva reunión</h4>
+              <span style="font-size:12px;color:#75798c">pega la transcripción o sube un .txt</span>
+            </div>
+            <div style="display:grid;grid-template-columns:260px 1fr;gap:14px;align-items:end">
+              <label style="display:flex;flex-direction:column;gap:5px"><span style="font-size:11.5px;color:#9397ab">Meeting ID</span><span style="display:flex;align-items:center;height:36px;padding:0 10px;border-radius:8px;background:#232532;box-shadow:inset 0 0 0 1px #3f424d;font-family:'JetBrains Mono',monospace;font-size:13px;color:#e9e9ed">checkout-v2-kickoff</span></label>
+              <label style="display:flex;flex-direction:column;gap:5px"><span style="font-size:11.5px;color:#9397ab">Archivo de transcripción (.txt)</span><span style="display:flex;align-items:center;gap:10px;height:36px;padding:0 10px 0 4px;border-radius:8px;box-shadow:inset 0 0 0 1px #3f424d;font-size:13px;color:#9397ab"><span style="display:inline-flex;align-items:center;height:28px;padding:0 12px;border-radius:6px;box-shadow:inset 0 0 0 1px rgba(233,233,237,.16);font-size:12.5px;color:#cfd3e5">Elegir archivo</span><span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#b5abfc">checkout-v2-kickoff.txt</span><span style="margin-left:auto;font-size:11.5px;color:#595d6c">18 KB · 42 turnos detectados</span></span></label>
+            </div>
+            <span style="font-size:11.5px;color:#75798c">El archivo se lee en tu navegador, nunca se sube a ningún lado — solo se envía el texto al iniciar el job.</span>
+            <label style="display:flex;flex-direction:column;gap:5px">
+              <span style="font-size:11.5px;color:#9397ab">Transcripción</span>
+              <span style="display:block;min-height:150px;padding:11px 12px;border-radius:8px;background:#232532;box-shadow:inset 0 0 0 1px #3f424d;font-family:'JetBrains Mono',monospace;font-size:12.5px;line-height:1.7;color:#b2b6ca">[00:00:03] Ana (Product Manager): necesitamos que el checkout recuerde la tarjeta del cliente<br>[00:00:21] Luis (Tech Lead): el servicio de tokenización ya existe, sería reusarlo<br>[00:00:44] Ana (Product Manager): y si la rechazan, pedimos CVV otra vez antes de cobrar<br>[00:01:02] Mara (QA): ¿qué pasa en compra como invitado?</span>
+            </label>
+            <div style="display:flex;align-items:center;gap:12px">
+              <span style="display:inline-flex;align-items:center;height:38px;padding:0 18px;border-radius:8px;box-shadow:inset 0 0 0 1px #9184d9;font-size:14px;font-weight:500;color:#b5abfc">Generar backlog</span>
+              <span style="font-size:11.5px;color:#75798c">Formatos reconocidos: <span style="font-family:'JetBrains Mono',monospace;color:#9397ab">[HH:MM:SS] Hablante:</span> · <span style="font-family:'JetBrains Mono',monospace;color:#9397ab">Hablante:</span> · Meet / Teams</span>
+            </div>
+          </div>
+
+          <!-- job corriendo -->
+          <div style="display:flex;flex-direction:column;gap:16px;padding:16px;border-radius:8px;background:#1b1d2b;box-shadow:inset 0 0 0 1px rgba(145,132,217,.45)">
+            <div style="display:flex;align-items:center;gap:12px">
+              <span style="display:inline-flex;align-items:center;gap:7px;padding:4px 10px 4px 8px;border-radius:6px;background:rgba(145,132,217,.16);box-shadow:inset 0 0 0 1px rgba(145,132,217,.5);font-size:11.5px;color:#d2cefd"><span style="width:7px;height:7px;border-radius:50%;background:#b5abfc;animation:pulse 1.6s ease-in-out infinite"></span>Procesando</span>
+              <span style="font-size:14px;font-weight:500">checkout-v2-kickoff</span>
+              <span style="font-family:'JetBrains Mono',monospace;font-size:11.5px;color:#75798c">job 8f3a91c4 · etapa 4 de 7 · ~40 s restantes</span>
+              <span style="margin-left:auto;font-size:12px;color:#75798c">Actualizando cada 2 s</span>
+            </div>
+            <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:0;position:relative">
+              <div style="position:absolute;left:6%;right:6%;top:6px;height:1px;background:rgba(233,233,237,.12)"></div>
+              <div style="position:absolute;left:6%;width:44%;top:6px;height:1px;background:#9184d9"></div>
+              <div style="position:relative;display:flex;flex-direction:column;gap:9px;align-items:flex-start"><span style="width:13px;height:13px;border-radius:50%;background:#9184d9;box-shadow:0 0 0 3px #1b1d2b"></span><span style="font-size:12px;color:#cfd3e5">Normalizar</span><span style="font-family:'JetBrains Mono',monospace;font-size:10px;color:#595d6c">normalize</span></div>
+              <div style="position:relative;display:flex;flex-direction:column;gap:9px;align-items:flex-start"><span style="width:13px;height:13px;border-radius:50%;background:#9184d9;box-shadow:0 0 0 3px #1b1d2b"></span><span style="font-size:12px;color:#cfd3e5">Segmentar</span><span style="font-family:'JetBrains Mono',monospace;font-size:10px;color:#595d6c">segment</span></div>
+              <div style="position:relative;display:flex;flex-direction:column;gap:9px;align-items:flex-start"><span style="width:13px;height:13px;border-radius:50%;background:#9184d9;box-shadow:0 0 0 3px #1b1d2b"></span><span style="font-size:12px;color:#cfd3e5">Clasificar</span><span style="font-family:'JetBrains Mono',monospace;font-size:10px;color:#595d6c">classify</span></div>
+              <div style="position:relative;display:flex;flex-direction:column;gap:9px;align-items:flex-start"><span style="width:13px;height:13px;border-radius:50%;background:#1b1d2b;box-shadow:0 0 0 2px #b5abfc,0 0 0 6px rgba(145,132,217,.22);animation:pulse 1.6s ease-in-out infinite"></span><span style="font-size:12px;font-weight:500;color:#d2cefd">Entidades</span><span style="font-family:'JetBrains Mono',monospace;font-size:10px;color:#8b7fd0">extract_entities</span></div>
+              <div style="position:relative;display:flex;flex-direction:column;gap:9px;align-items:flex-start"><span style="width:13px;height:13px;border-radius:50%;background:#1b1d2b;box-shadow:inset 0 0 0 1px #595d6c"></span><span style="font-size:12px;color:#75798c">Generar backlog</span><span style="font-family:'JetBrains Mono',monospace;font-size:10px;color:#4a4d59">generate_backlog</span></div>
+              <div style="position:relative;display:flex;flex-direction:column;gap:9px;align-items:flex-start"><span style="width:13px;height:13px;border-radius:50%;background:#1b1d2b;box-shadow:inset 0 0 0 1px #595d6c"></span><span style="font-size:12px;color:#75798c">Estimar</span><span style="font-family:'JetBrains Mono',monospace;font-size:10px;color:#4a4d59">estimate</span></div>
+              <div style="position:relative;display:flex;flex-direction:column;gap:9px;align-items:flex-start"><span style="width:13px;height:13px;border-radius:50%;background:#1b1d2b;box-shadow:inset 0 0 0 1px #595d6c"></span><span style="font-size:12px;color:#75798c">Validar</span><span style="font-family:'JetBrains Mono',monospace;font-size:10px;color:#4a4d59">validate</span></div>
+            </div>
+          </div>
+
+          <!-- esqueletos -->
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <div style="display:flex;flex-direction:column;gap:12px;padding:18px;border-radius:8px;background:#191b28;box-shadow:inset 0 0 0 1px #3f424d;overflow:hidden">
+              <span style="width:210px;height:16px;border-radius:4px;background:rgba(233,233,237,.09);position:relative;overflow:hidden"><span style="position:absolute;inset:0;width:40%;background:linear-gradient(90deg,transparent,rgba(233,233,237,.09),transparent);animation:sweep 1.8s linear infinite"></span></span>
+              <span style="width:60%;height:10px;border-radius:4px;background:rgba(233,233,237,.06)"></span>
+              <div style="margin-left:16px;padding-left:18px;border-left:1px solid rgba(233,233,237,.1);display:flex;flex-direction:column;gap:10px">
+                <span style="height:44px;border-radius:8px;background:rgba(233,233,237,.05);border-left:2px solid rgba(145,132,217,.35)"></span>
+                <span style="height:44px;border-radius:8px;background:rgba(233,233,237,.04);border-left:2px solid rgba(145,132,217,.2)"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- sidebar vacía -->
+        <div style="display:flex;flex-direction:column;gap:12px;padding:22px 20px;border-left:1px solid rgba(233,233,237,.08)">
+          <span style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#9397ab">Mis reuniones</span>
+          <div style="display:flex;flex-direction:column;gap:8px;padding:18px 14px;border-radius:8px;box-shadow:inset 0 0 0 1px rgba(233,233,237,.08)">
+            <span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#595d6c">—</span>
+            <span style="font-size:13px;color:#cfd3e5">Todavía no hay reuniones procesadas.</span>
+            <span style="font-size:12px;color:#75798c;text-wrap:pretty">La primera aparecerá aquí en cuanto generes un backlog; puedes volver a ella sin correr el pipeline otra vez.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;width:1280px;align-items:start">
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <span style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#75798c">Job fallido</span>
+        <div style="display:flex;flex-direction:column;gap:14px;padding:16px;border-radius:14px;background:#161826;box-shadow:0 0 0 1px #3f424d">
+          <div style="display:flex;flex-direction:column;gap:12px;padding:16px;border-radius:8px;background:#1b1d2b;box-shadow:inset 0 0 0 1px rgba(214,131,127,.4)">
+            <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+              <span style="display:inline-flex;align-items:center;gap:7px;padding:4px 10px 4px 8px;border-radius:6px;background:rgba(198,109,105,.14);box-shadow:inset 0 0 0 1px rgba(214,131,127,.4);font-size:11.5px;color:#e8b0ad"><span style="width:7px;height:7px;border-radius:50%;background:#d6837f"></span>Falló</span>
+              <span style="font-size:14px;font-weight:500">daily-2026-08-19</span>
+              <span style="font-family:'JetBrains Mono',monospace;font-size:11.5px;color:#75798c">job 2b71ce09 · falló en <span style="color:#e8b0ad">segment</span></span>
+            </div>
+            <div style="display:grid;grid-template-columns:repeat(7,1fr);position:relative">
+              <div style="position:absolute;left:6%;right:6%;top:6px;height:1px;background:rgba(233,233,237,.12)"></div>
+              <div style="position:relative;display:flex;flex-direction:column;gap:8px"><span style="width:13px;height:13px;border-radius:50%;background:#9184d9;box-shadow:0 0 0 3px #1b1d2b"></span><span style="font-size:11px;color:#9397ab">Normalizar</span></div>
+              <div style="position:relative;display:flex;flex-direction:column;gap:8px"><span style="width:13px;height:13px;border-radius:50%;background:#d6837f;box-shadow:0 0 0 3px #1b1d2b"></span><span style="font-size:11px;color:#e8b0ad">Segmentar</span></div>
+              <div style="position:relative;display:flex;flex-direction:column;gap:8px"><span style="width:13px;height:13px;border-radius:50%;background:#1b1d2b;box-shadow:inset 0 0 0 1px #4a4d59"></span><span style="font-size:11px;color:#595d6c">Clasificar</span></div>
+              <div style="position:relative;display:flex;flex-direction:column;gap:8px"><span style="width:13px;height:13px;border-radius:50%;background:#1b1d2b;box-shadow:inset 0 0 0 1px #4a4d59"></span><span style="font-size:11px;color:#595d6c">Entidades</span></div>
+              <div style="position:relative;display:flex;flex-direction:column;gap:8px"><span style="width:13px;height:13px;border-radius:50%;background:#1b1d2b;box-shadow:inset 0 0 0 1px #4a4d59"></span><span style="font-size:11px;color:#595d6c">Generar</span></div>
+              <div style="position:relative;display:flex;flex-direction:column;gap:8px"><span style="width:13px;height:13px;border-radius:50%;background:#1b1d2b;box-shadow:inset 0 0 0 1px #4a4d59"></span><span style="font-size:11px;color:#595d6c">Estimar</span></div>
+              <div style="position:relative;display:flex;flex-direction:column;gap:8px"><span style="width:13px;height:13px;border-radius:50%;background:#1b1d2b;box-shadow:inset 0 0 0 1px #4a4d59"></span><span style="font-size:11px;color:#595d6c">Validar</span></div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:6px;padding:11px 12px;border-radius:8px;background:rgba(198,109,105,.07)">
+              <span style="font-size:12.5px;color:#e9e9ed">No se pudo segmentar la transcripción: no se detectaron turnos de hablante.</span>
+              <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#9397ab">SegmentationError: 0 speaker turns matched</span>
+              <span style="font-size:12px;color:#9397ab;text-wrap:pretty">Revisa que cada línea siga el formato <span style="font-family:'JetBrains Mono',monospace;color:#cfd3e5">Hablante: texto</span> y vuelve a intentar.</span>
+            </div>
+            <div style="display:flex;gap:8px">
+              <span style="display:inline-flex;align-items:center;height:32px;padding:0 14px;border-radius:8px;box-shadow:inset 0 0 0 1px #9184d9;font-size:13px;color:#b5abfc">Reintentar</span>
+              <span style="display:inline-flex;align-items:center;height:32px;padding:0 14px;border-radius:8px;box-shadow:inset 0 0 0 1px rgba(233,233,237,.16);font-size:13px;color:#cfd3e5">Editar transcripción</span>
+              <span style="display:inline-flex;align-items:center;height:32px;padding:0 12px;border-radius:8px;font-family:'JetBrains Mono',monospace;font-size:12px;color:#75798c">copiar error</span>
+            </div>
+          </div>
+        </div>
+        <span style="font-size:12.5px;color:#9397ab;max-width:56ch;text-wrap:pretty">El error nunca es solo rojo: dice qué etapa, en lenguaje humano, con el detalle técnico en mono debajo y una acción concreta. Sin exportaciones (no hay resultado que exportar).</span>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <span style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#75798c">Vacío: nunca ha corrido nada</span>
+        <div style="display:flex;flex-direction:column;gap:14px;padding:16px;border-radius:14px;background:#161826;box-shadow:0 0 0 1px #3f424d">
+          <div style="display:flex;flex-direction:column;gap:12px;padding:36px 24px;border-radius:8px;box-shadow:inset 0 0 0 1px rgba(233,233,237,.1);align-items:flex-start">
+            <span style="font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.06em;color:#75798c">SIN BACKLOG TODAVÍA</span>
+            <h4 style="margin:0;font-size:20px;max-width:26ch;letter-spacing:-.015em">Pega una transcripción arriba y el backlog aparece aquí.</h4>
+            <p style="margin:0;max-width:48ch;font-size:13px;color:#9397ab;text-wrap:pretty">Tarda entre 30 segundos y un par de minutos según el largo de la reunión. Puedes cerrar la pestaña: el job sigue y lo retomas desde “Mis reuniones”.</p>
+            <div style="display:flex;flex-direction:column;gap:8px;margin-top:4px;width:100%">
+              <span style="height:38px;border-radius:8px;background:rgba(233,233,237,.035);border-left:2px solid rgba(145,132,217,.18)"></span>
+              <span style="height:38px;border-radius:8px;background:rgba(233,233,237,.025);border-left:2px solid rgba(145,132,217,.12);margin-left:20px"></span>
+              <span style="height:38px;border-radius:8px;background:rgba(233,233,237,.02);border-left:2px solid rgba(145,132,217,.08);margin-left:40px"></span>
+            </div>
+          </div>
+        </div>
+        <span style="font-size:12.5px;color:#9397ab;max-width:56ch;text-wrap:pretty">El vacío enseña la forma de lo que va a llegar: tres barras escalonadas insinúan épica → feature → historia sin dibujar una ilustración.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ ANATOMÍA ══ -->
+  <div id="b-historia" style="display:flex;flex-direction:column;gap:16px">
+    <div style="display:flex;flex-direction:column;gap:6px">
+      <span style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#9184d9">05 · Anatomía de la historia</span>
+      <h2 style="margin:0;font-size:28px">Nueve bloques de información sin sentirse un formulario</h2>
+      <p style="margin:0;max-width:72ch;font-size:13.5px;color:#9397ab;text-wrap:pretty">La regla: cada bloque tiene un peso tipográfico distinto y solo uno tiene tamaño de titular. Nada de cajas dentro de cajas — las secciones se separan con etiqueta pequeña en versalitas y aire, y lo de solo lectura se ve calmado a propósito.</p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:860px 1fr;gap:28px;align-items:start">
+      <div style="display:flex;flex-direction:column;gap:14px;padding:18px;border-radius:14px;background:#161826;box-shadow:0 0 0 1px #3f424d,0 18px 40px rgba(0,0,0,.45)">
+        <div style="display:flex;flex-direction:column;gap:14px;padding:18px;border-radius:8px;background:#232532;box-shadow:inset 0 0 0 1px #3f424d">
+
+          <div style="display:flex;align-items:flex-start;gap:12px">
+            <div style="display:flex;align-items:center;gap:10px;margin-right:auto;flex-wrap:wrap">
+              <span style="display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;border-radius:50%;background:#9184d9;color:#161826;font-family:'JetBrains Mono',monospace;font-size:10px">1</span>
+              <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#75798c">US-01</span>
+              <span style="font-size:18px;font-weight:500;letter-spacing:-.01em">Guardar método de pago preferido</span>
+              <span style="display:inline-flex;align-items:center;gap:7px;padding:3px 9px 3px 7px;border-radius:6px;background:rgba(106,181,141,.14);box-shadow:inset 0 0 0 1px rgba(122,197,157,.4);font-size:11px;color:#a3dcbd"><span style="width:6px;height:6px;border-radius:50%;background:#7ac59d"></span>Aprobado</span>
+            </div>
+            <span style="display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;border-radius:50%;background:#9184d9;color:#161826;font-family:'JetBrains Mono',monospace;font-size:10px">2</span>
+            <span style="display:inline-flex;align-items:baseline;gap:4px;padding:4px 10px;border-radius:6px;box-shadow:inset 0 0 0 1px rgba(145,132,217,.5);font-family:'JetBrains Mono',monospace;font-size:13px;color:#b5abfc">5<span style="font-size:10px;color:#9397ab">pts</span></span>
+            <div style="display:flex;gap:4px">
+              <span style="display:inline-flex;align-items:center;height:28px;padding:0 10px;border-radius:7px;font-size:12px;color:#cfd3e5;box-shadow:inset 0 0 0 1px rgba(233,233,237,.14)">Editar</span>
+              <span style="display:inline-flex;align-items:center;height:28px;padding:0 10px;border-radius:7px;font-size:12px;color:#a3dcbd;opacity:.45">Aprobar</span>
+              <span style="display:inline-flex;align-items:center;height:28px;padding:0 10px;border-radius:7px;font-size:12px;color:#e8b0ad">Descartar</span>
+            </div>
+          </div>
+
+          <div style="display:flex;align-items:flex-start;gap:10px">
+            <span style="display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;border-radius:50%;background:#9184d9;color:#161826;font-family:'JetBrains Mono',monospace;font-size:10px;margin-top:4px">3</span>
+            <div style="flex:1;display:grid;grid-template-columns:auto 1fr;gap:5px 12px;padding:12px 14px;border-radius:8px;background:rgba(145,132,217,.06);box-shadow:inset 2px 0 0 rgba(145,132,217,.5);font-size:14px;line-height:1.5">
+              <span style="font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#75798c;padding-top:4px">Como</span><span>cliente recurrente de la tienda</span>
+              <span style="font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#75798c;padding-top:4px">Quiero</span><span>que mi tarjeta guardada aparezca preseleccionada en el checkout</span>
+              <span style="font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#75798c;padding-top:4px">Para</span><span>no volver a escribir mis datos en cada compra</span>
+            </div>
+          </div>
+
+          <div style="display:grid;grid-template-columns:1.3fr 1fr;gap:22px">
+            <div style="display:flex;flex-direction:column;gap:9px">
+              <span style="display:flex;align-items:center;gap:8px;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#9397ab"><span style="display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;border-radius:50%;background:#9184d9;color:#161826;font-family:'JetBrains Mono',monospace;font-size:10px">4</span>Criterios de aceptación</span>
+              <ol style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:9px">
+                <li style="display:grid;grid-template-columns:20px 1fr;gap:8px;font-size:13.5px;line-height:1.5;color:#e9e9ed"><span style="font-family:'JetBrains Mono',monospace;font-size:11.5px;color:#8b7fd0;padding-top:2px">01</span><span><span style="color:#9397ab">Dado que</span> tengo una tarjeta guardada, <span style="color:#9397ab">cuando</span> abro el checkout, <span style="color:#9397ab">entonces</span> aparece preseleccionada con los últimos 4 dígitos.</span></li>
+                <li style="display:grid;grid-template-columns:20px 1fr;gap:8px;font-size:13.5px;line-height:1.5;color:#e9e9ed"><span style="font-family:'JetBrains Mono',monospace;font-size:11.5px;color:#8b7fd0;padding-top:2px">02</span><span><span style="color:#9397ab">Dado que</span> tengo dos o más tarjetas, <span style="color:#9397ab">cuando</span> toco “cambiar”, <span style="color:#9397ab">entonces</span> veo la lista ordenada por último uso.</span></li>
+                <li style="display:grid;grid-template-columns:20px 1fr;gap:8px;font-size:13.5px;line-height:1.5;color:#e9e9ed"><span style="font-family:'JetBrains Mono',monospace;font-size:11.5px;color:#8b7fd0;padding-top:2px">03</span><span><span style="color:#9397ab">Dado que</span> la tarjeta fue rechazada, <span style="color:#9397ab">cuando</span> reintento el pago, <span style="color:#9397ab">entonces</span> se me pide el CVV antes de cobrar.</span></li>
+              </ol>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:16px">
+              <div style="display:flex;flex-direction:column;gap:8px">
+                <span style="display:flex;align-items:center;gap:8px;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#9397ab"><span style="display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;border-radius:50%;background:#9184d9;color:#161826;font-family:'JetBrains Mono',monospace;font-size:10px">5</span>Subtareas</span>
+                <div style="display:flex;flex-direction:column;gap:7px;font-size:12.5px;color:#cfd3e5">
+                  <span style="display:flex;align-items:center;gap:8px"><span style="font-family:'JetBrains Mono',monospace;font-size:10px;padding:2px 6px;border-radius:4px;background:rgba(145,132,217,.14);color:#b5abfc;min-width:74px;text-align:center">frontend</span>Selector con método preseleccionado</span>
+                  <span style="display:flex;align-items:center;gap:8px"><span style="font-family:'JetBrains Mono',monospace;font-size:10px;padding:2px 6px;border-radius:4px;background:rgba(147,151,171,.16);color:#cfd3e5;min-width:74px;text-align:center">backend</span>GET /payment-methods</span>
+                  <span style="display:flex;align-items:center;gap:8px"><span style="font-family:'JetBrains Mono',monospace;font-size:10px;padding:2px 6px;border-radius:4px;background:rgba(147,151,171,.16);color:#cfd3e5;min-width:74px;text-align:center">database</span>Índice user_id + last_used_at</span>
+                  <span style="display:flex;align-items:center;gap:8px"><span style="font-family:'JetBrains Mono',monospace;font-size:10px;padding:2px 6px;border-radius:4px;background:rgba(147,151,171,.16);color:#cfd3e5;min-width:74px;text-align:center">qa</span>Casos de tarjeta rechazada</span>
+                </div>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:5px">
+                <span style="display:flex;align-items:center;gap:8px;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#9397ab"><span style="display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;border-radius:50%;background:#9184d9;color:#161826;font-family:'JetBrains Mono',monospace;font-size:10px">6</span>Estimación</span>
+                <span style="font-size:12.5px;color:#b2b6ca;text-wrap:pretty">5 pts — reusa el servicio de tokenización existente; el riesgo está en el reintento con CVV.</span>
+              </div>
+            </div>
+          </div>
+
+          <div style="display:flex;align-items:flex-start;gap:10px;flex-wrap:wrap">
+            <span style="display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;border-radius:50%;background:#9184d9;color:#161826;font-family:'JetBrains Mono',monospace;font-size:10px;margin-top:6px">7</span>
+            <span style="display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:6px;background:rgba(198,109,105,.09);box-shadow:inset 0 0 0 1px rgba(214,131,127,.25);font-size:12.5px;color:#cfd3e5"><span style="font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#e8b0ad">Riesgo</span>Cumplimiento PCI al mostrar los últimos 4 dígitos desde caché.</span>
+            <span style="display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:6px;background:rgba(145,132,217,.09);box-shadow:inset 0 0 0 1px rgba(145,132,217,.25);font-size:12.5px;color:#cfd3e5"><span style="font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#b5abfc">Pregunta</span>¿Se preselecciona también en compra como invitado?</span>
+          </div>
+
+          <div style="display:flex;flex-direction:column;gap:10px;padding:12px 14px;border-radius:8px;background:#1b1d2b;box-shadow:inset 0 0 0 1px rgba(145,132,217,.35)">
+            <div style="display:flex;align-items:center;gap:10px">
+              <span style="display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;border-radius:50%;background:#9184d9;color:#161826;font-family:'JetBrains Mono',monospace;font-size:10px">8</span>
+              <span style="display:inline-flex;align-items:center;gap:7px;font-size:12.5px;color:#b5abfc"><span style="font-family:'JetBrains Mono',monospace;font-size:11px">⌄</span>Ver fuente (2)</span>
+              <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#75798c;margin-left:auto">checkout-v2-kickoff.txt</span>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:10px">
+              <div style="display:grid;grid-template-columns:auto 1fr;gap:10px;padding-left:2px">
+                <span style="width:2px;border-radius:1px;background:rgba(145,132,217,.45)"></span>
+                <div style="display:flex;flex-direction:column;gap:3px">
+                  <span style="font-family:'JetBrains Mono',monospace;font-size:13px;line-height:1.6;color:#e9e9ed">“necesitamos que el checkout recuerde la tarjeta del cliente”</span>
+                  <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#75798c">Ana (Product Manager) · 00:00:03</span>
+                </div>
+              </div>
+              <div style="display:grid;grid-template-columns:auto 1fr;gap:10px;padding-left:2px">
+                <span style="width:2px;border-radius:1px;background:rgba(145,132,217,.45)"></span>
+                <div style="display:flex;flex-direction:column;gap:3px">
+                  <span style="font-family:'JetBrains Mono',monospace;font-size:13px;line-height:1.6;color:#e9e9ed">“y si la rechazan, pedimos CVV otra vez antes de cobrar”</span>
+                  <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#75798c">Ana (Product Manager) · 00:00:44</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:14px;padding:22px;border-radius:14px;background:#161826;box-shadow:0 0 0 1px #3f424d">
+        <span style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#75798c">Cómo se resuelve la densidad</span>
+        <div style="display:flex;flex-direction:column;gap:13px;font-size:12.5px;color:#b2b6ca">
+          <div style="display:grid;grid-template-columns:20px 1fr;gap:10px"><span style="font-family:'JetBrains Mono',monospace;color:#b5abfc">1</span><span><strong style="color:#e9e9ed;font-weight:500">Un solo titular.</strong> El título es el único texto a 18px; todo lo demás baja a 13–14px. La tarjeta tiene un punto de entrada, no cinco.</span></div>
+          <div style="display:grid;grid-template-columns:20px 1fr;gap:10px"><span style="font-family:'JetBrains Mono',monospace;color:#b5abfc">2</span><span><strong style="color:#e9e9ed;font-weight:500">La estimación sube al encabezado.</strong> “5 pts” es un dato de decisión: vive junto al título como marca de acento, y su justificación se queda abajo, en gris.</span></div>
+          <div style="display:grid;grid-template-columns:20px 1fr;gap:10px"><span style="font-family:'JetBrains Mono',monospace;color:#b5abfc">3</span><span><strong style="color:#e9e9ed;font-weight:500">Como/quiero/para es un bloque, no tres campos.</strong> Etiquetas en versalitas de 11px a la izquierda, texto continuo a la derecha, con una barra de acento: se lee como una frase, no como formulario.</span></div>
+          <div style="display:grid;grid-template-columns:20px 1fr;gap:10px"><span style="font-family:'JetBrains Mono',monospace;color:#b5abfc">4</span><span><strong style="color:#e9e9ed;font-weight:500">Criterios con numeral colgante.</strong> El número en mono fuera del texto; “Dado que / cuando / entonces” en gris para que el ojo salte directo a la condición.</span></div>
+          <div style="display:grid;grid-template-columns:20px 1fr;gap:10px"><span style="font-family:'JetBrains Mono',monospace;color:#b5abfc">5</span><span><strong style="color:#e9e9ed;font-weight:500">Dos columnas asimétricas.</strong> Criterios (lo que se revisa) a la izquierda con más ancho; subtareas y estimación (solo lectura) a la derecha, más angostas y calladas.</span></div>
+          <div style="display:grid;grid-template-columns:20px 1fr;gap:10px"><span style="font-family:'JetBrains Mono',monospace;color:#b5abfc">6</span><span><strong style="color:#e9e9ed;font-weight:500">Disciplina como chip mono de ancho fijo.</strong> <span style="font-family:'JetBrains Mono',monospace">frontend/backend/qa…</span> alineados en columna: se escanean verticalmente. Solo <span style="font-family:'JetBrains Mono',monospace">frontend</span> lleva tinte de acento en este ejemplo porque es la disciplina del usuario actual — opcional.</span></div>
+          <div style="display:grid;grid-template-columns:20px 1fr;gap:10px"><span style="font-family:'JetBrains Mono',monospace;color:#b5abfc">7</span><span><strong style="color:#e9e9ed;font-weight:500">Riesgos y preguntas como notas al pie, no alertas.</strong> Píldoras de una línea, sin emoji, en tinte rojo/acento al 9%: presentes, nunca urgentes.</span></div>
+          <div style="display:grid;grid-template-columns:20px 1fr;gap:10px"><span style="font-family:'JetBrains Mono',monospace;color:#b5abfc">8</span><span><strong style="color:#e9e9ed;font-weight:500">La fuente es el clímax, no un apéndice.</strong> Al expandir, las citas van en mono con barra de acento y hablante + timestamp: se ve que es texto ajeno, verbatim. Es la prueba de que el backlog no se lo inventó nadie.</span></div>
+        </div>
+        <div style="height:1px;background:linear-gradient(to right,transparent,#3f424d 48px,#3f424d calc(100% - 48px),transparent)"></div>
+        <p style="margin:0;font-size:12.5px;color:#75798c;text-wrap:pretty">Solo lectura hoy: subtareas, estimación, riesgos y preguntas. No llevan affordance de edición (ni cursor, ni borde) para no prometer lo que el backend aún no hace. Cuando exista, cada bloque gana el mismo lápiz que el resto.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ EDICIÓN ══ -->
+  <div id="b-edicion" style="display:flex;flex-direction:column;gap:16px">
+    <div style="display:flex;flex-direction:column;gap:6px">
+      <span style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#9184d9">06 · Modo edición</span>
+      <h2 style="margin:0;font-size:28px">Misma tarjeta, campos en su lugar</h2>
+      <p style="margin:0;max-width:72ch;font-size:13.5px;color:#9397ab;text-wrap:pretty">Al entrar en edición la tarjeta no cambia de forma: los textos se convierten en inputs del mismo tamaño y posición, la tarjeta gana un contorno de acento, y “Editar” se sustituye por Guardar / Cancelar. Los bloques de solo lectura se atenúan al 55% para dejar claro qué sí es editable.</p>
+    </div>
+    <div style="width:820px;display:flex;flex-direction:column;gap:14px;padding:18px;border-radius:14px;background:#161826;box-shadow:0 0 0 1px #3f424d,0 18px 40px rgba(0,0,0,.45)">
+      <div style="display:flex;flex-direction:column;gap:14px;padding:18px;border-radius:8px;background:#232532;box-shadow:inset 0 0 0 1.5px #9184d9">
+        <div style="display:flex;align-items:center;gap:12px">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#75798c">US-01</span>
+          <span style="flex:1;display:flex;align-items:center;height:36px;padding:0 11px;border-radius:8px;background:#1b1d2b;box-shadow:inset 0 0 0 1px #9184d9;font-size:16px;font-weight:500">Guardar método de pago preferido<span style="width:1.5px;height:18px;background:#b5abfc;margin-left:2px;animation:pulse 1.1s steps(2) infinite"></span></span>
+          <div style="display:flex;gap:6px">
+            <span style="display:inline-flex;align-items:center;height:30px;padding:0 14px;border-radius:8px;box-shadow:inset 0 0 0 1px #9184d9;font-size:12.5px;font-weight:500;color:#b5abfc">Guardar</span>
+            <span style="display:inline-flex;align-items:center;height:30px;padding:0 12px;border-radius:8px;font-size:12.5px;color:#9397ab">Cancelar</span>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:auto 1fr;gap:8px 12px;align-items:center">
+          <span style="font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#75798c">Como</span><span style="display:flex;align-items:center;height:34px;padding:0 11px;border-radius:8px;background:#1b1d2b;box-shadow:inset 0 0 0 1px #3f424d;font-size:13.5px">cliente recurrente de la tienda</span>
+          <span style="font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#75798c">Quiero</span><span style="display:flex;align-items:center;height:34px;padding:0 11px;border-radius:8px;background:#1b1d2b;box-shadow:inset 0 0 0 1px #3f424d;font-size:13.5px">que mi tarjeta guardada aparezca preseleccionada en el checkout</span>
+          <span style="font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#75798c">Para</span><span style="display:flex;align-items:center;height:34px;padding:0 11px;border-radius:8px;background:#1b1d2b;box-shadow:inset 0 0 0 1px #3f424d;font-size:13.5px">no volver a escribir mis datos en cada compra</span>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <span style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#9397ab">Criterios de aceptación</span>
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <div style="display:grid;grid-template-columns:20px 1fr auto;gap:8px;align-items:start">
+              <span style="font-family:'JetBrains Mono',monospace;font-size:11.5px;color:#75798c;padding-top:9px">01</span>
+              <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px">
+                <span style="display:flex;flex-direction:column;gap:3px"><span style="font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:#75798c">Dado</span><span style="display:flex;align-items:center;height:32px;padding:0 10px;border-radius:6px;background:#1b1d2b;box-shadow:inset 0 0 0 1px #3f424d;font-size:12.5px;overflow:hidden;white-space:nowrap">tengo una tarjeta guardada</span></span>
+                <span style="display:flex;flex-direction:column;gap:3px"><span style="font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:#75798c">Cuando</span><span style="display:flex;align-items:center;height:32px;padding:0 10px;border-radius:6px;background:#1b1d2b;box-shadow:inset 0 0 0 1px #3f424d;font-size:12.5px;overflow:hidden;white-space:nowrap">abro el checkout</span></span>
+                <span style="display:flex;flex-direction:column;gap:3px"><span style="font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:#75798c">Entonces</span><span style="display:flex;align-items:center;height:32px;padding:0 10px;border-radius:6px;background:#1b1d2b;box-shadow:inset 0 0 0 1px #3f424d;font-size:12.5px;overflow:hidden;white-space:nowrap">aparece preseleccionada</span></span>
+              </div>
+              <span style="display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;margin-top:18px;border-radius:6px;font-size:12px;color:#9397ab;box-shadow:inset 0 0 0 1px rgba(233,233,237,.12)">✕</span>
+            </div>
+            <div style="display:grid;grid-template-columns:20px 1fr auto;gap:8px;align-items:center">
+              <span style="font-family:'JetBrains Mono',monospace;font-size:11.5px;color:#75798c">02</span>
+              <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px">
+                <span style="display:flex;align-items:center;height:32px;padding:0 10px;border-radius:6px;background:#1b1d2b;box-shadow:inset 0 0 0 1px #3f424d;font-size:12.5px;overflow:hidden;white-space:nowrap">tengo dos o más tarjetas</span>
+                <span style="display:flex;align-items:center;height:32px;padding:0 10px;border-radius:6px;background:#1b1d2b;box-shadow:inset 0 0 0 1px #3f424d;font-size:12.5px;overflow:hidden;white-space:nowrap">toco “cambiar”</span>
+                <span style="display:flex;align-items:center;height:32px;padding:0 10px;border-radius:6px;background:#1b1d2b;box-shadow:inset 0 0 0 1px #3f424d;font-size:12.5px;overflow:hidden;white-space:nowrap">veo la lista por último uso</span>
+              </div>
+              <span style="display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:6px;font-size:12px;color:#9397ab;box-shadow:inset 0 0 0 1px rgba(233,233,237,.12)">✕</span>
+            </div>
+            <span style="display:inline-flex;align-items:center;gap:6px;margin-left:28px;font-size:12.5px;color:#b5abfc">+ agregar criterio</span>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1.3fr 1fr;gap:22px;opacity:.55">
+          <div style="display:flex;flex-direction:column;gap:6px">
+            <span style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#9397ab">Subtareas · solo lectura</span>
+            <span style="font-size:12.5px;color:#cfd3e5">4 subtareas — frontend, backend, database, qa</span>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:6px">
+            <span style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#9397ab">Estimación · solo lectura</span>
+            <span style="font-size:12.5px;color:#cfd3e5">5 pts</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ MOBILE ══ -->
+  <div id="b-mobile" style="display:flex;flex-direction:column;gap:16px">
+    <div style="display:flex;flex-direction:column;gap:6px">
+      <span style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#9184d9">07 · Mobile · 390 px</span>
+      <h2 style="margin:0;font-size:28px">Una columna, el sidebar se vuelve hoja, la jerarquía se vuelve acordeón</h2>
+      <p style="margin:0;max-width:78ch;font-size:13.5px;color:#9397ab;text-wrap:pretty">Tres reglas: (1) “Mis reuniones” pasa a ser un selector arriba que abre una hoja inferior; (2) la sangría de la jerarquía baja de 18 a 10 px y se apoya en el riel y en la etiqueta ÉPICA/FEATURE, no en el espacio; (3) las acciones de la historia abierta van a una barra inferior fija con toques de 44 px, y las tres exportaciones se agrupan en un botón “Exportar”.</p>
+    </div>
+
+    <div style="display:flex;gap:24px;flex-wrap:wrap">
+
+      <!-- mobile: backlog -->
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <span style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#75798c">Backlog · revisión</span>
+        <div style="width:390px;height:844px;overflow:hidden;border-radius:28px;background:#161826;box-shadow:0 0 0 1px #3f424d,0 18px 40px rgba(0,0,0,.45);display:flex;flex-direction:column">
+          <div style="display:flex;align-items:center;gap:10px;padding:14px 16px 10px">
+            <span style="display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:7px;box-shadow:inset 0 0 0 1px #9184d9;font-family:'JetBrains Mono',monospace;font-size:10px;color:#b5abfc">PO</span>
+            <span style="font-size:14px;font-weight:500;margin-right:auto">Agente PO</span>
+            <span style="width:26px;height:26px;border-radius:50%;background:#3f424d;box-shadow:inset 0 0 0 1px #595d6c"></span>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:10px;padding:0 16px 12px">
+            <div style="display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:8px;background:#1b1d2b;box-shadow:inset 0 0 0 1px #3f424d">
+              <span style="width:7px;height:7px;border-radius:50%;background:#7ac59d"></span>
+              <span style="font-size:13.5px;font-weight:500;margin-right:auto">checkout-v2-kickoff</span>
+              <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#75798c">4 reuniones ⌄</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:10px">
+              <span style="flex:1;display:flex;height:4px;border-radius:2px;overflow:hidden;background:rgba(233,233,237,.08)"><span style="width:42%;background:#7ac59d"></span><span style="width:50%;background:#595d6c"></span><span style="width:8%;background:#d6837f"></span></span>
+              <span style="font-size:11.5px;color:#9397ab">5/12 aprobadas</span>
+              <span style="display:inline-flex;align-items:center;height:30px;padding:0 12px;border-radius:8px;box-shadow:inset 0 0 0 1px #9184d9;font-size:12.5px;color:#b5abfc">Exportar ⌄</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:8px;padding:9px 12px;border-radius:8px;box-shadow:inset 0 0 0 1px rgba(233,233,237,.1);font-size:12.5px;color:#9397ab"><span style="font-family:'JetBrains Mono',monospace">+</span>Nueva reunión</div>
+          </div>
+          <div style="flex:1;display:flex;flex-direction:column;gap:10px;padding:0 16px 20px;overflow:hidden">
+            <div style="display:flex;flex-direction:column;gap:10px;padding:14px 12px;border-radius:8px;background:#191b28;box-shadow:inset 0 0 0 1px #3f424d">
+              <div style="display:flex;align-items:flex-start;gap:8px">
+                <span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#9397ab;padding-top:3px">⌄</span>
+                <div style="display:flex;flex-direction:column;gap:5px;margin-right:auto">
+                  <span style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.08em;color:#75798c">ÉPICA 1 · 8 HISTORIAS</span>
+                  <span style="font-size:17px;font-weight:500;letter-spacing:-.01em">Rediseño del checkout</span>
+                </div>
+                <span style="display:inline-flex;align-items:center;gap:6px;padding:3px 8px 3px 6px;border-radius:6px;background:rgba(106,181,141,.14);box-shadow:inset 0 0 0 1px rgba(122,197,157,.4);font-size:10.5px;color:#a3dcbd"><span style="width:6px;height:6px;border-radius:50%;background:#7ac59d"></span>Aprobado</span>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:10px;margin-left:14px;padding-left:10px;border-left:1px solid rgba(233,233,237,.1)">
+                <div style="display:flex;flex-direction:column;gap:10px;padding:12px;border-radius:8px;background:#1e202e;box-shadow:inset 0 0 0 1px #3f424d;border-left:2px solid #9184d9">
+                  <div style="display:flex;flex-direction:column;gap:5px">
+                    <span style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.08em;color:#75798c">FEATURE · 3 HISTORIAS</span>
+                    <div style="display:flex;align-items:center;gap:8px"><span style="font-size:15px;font-weight:500;margin-right:auto">Pago con un clic</span><span style="display:inline-flex;align-items:center;gap:6px;padding:3px 8px 3px 6px;border-radius:6px;background:rgba(147,151,171,.16);box-shadow:inset 0 0 0 1px rgba(178,182,202,.32);font-size:10.5px;color:#cfd3e5"><span style="width:6px;height:6px;border-radius:50%;background:#b2b6ca"></span>Borrador</span></div>
+                  </div>
+                  <div style="display:flex;flex-direction:column;gap:8px">
+                    <div style="display:flex;flex-direction:column;gap:7px;padding:11px 12px;border-radius:8px;background:#232532;box-shadow:inset 0 0 0 1px rgba(122,197,157,.28)">
+                      <div style="display:flex;align-items:center;gap:8px"><span style="width:6px;height:6px;border-radius:50%;background:#7ac59d"></span><span style="font-family:'JetBrains Mono',monospace;font-size:10px;color:#75798c">US-01</span><span style="margin-left:auto;font-family:'JetBrains Mono',monospace;font-size:11px;color:#b5abfc">5 pts</span></div>
+                      <span style="font-size:14.5px;font-weight:500;line-height:1.3">Guardar método de pago preferido</span>
+                      <span style="font-size:12px;color:#75798c">3 criterios · 4 subtareas · 2 fuentes</span>
+                    </div>
+                    <div style="display:flex;flex-direction:column;gap:7px;padding:11px 12px;border-radius:8px;background:#232532;box-shadow:inset 0 0 0 1px #3f424d">
+                      <div style="display:flex;align-items:center;gap:8px"><span style="width:6px;height:6px;border-radius:50%;background:#b2b6ca"></span><span style="font-family:'JetBrains Mono',monospace;font-size:10px;color:#75798c">US-02</span><span style="margin-left:auto;font-family:'JetBrains Mono',monospace;font-size:11px;color:#b5abfc">3 pts</span></div>
+                      <span style="font-size:14.5px;font-weight:500;line-height:1.3">Autocompletar dirección de envío</span>
+                      <span style="font-size:12px;color:#75798c">3 criterios · 3 subtareas · 2 fuentes</span>
+                    </div>
+                    <div style="display:flex;flex-direction:column;gap:7px;padding:11px 12px;border-radius:8px;background:#232532;box-shadow:inset 0 0 0 1px #3f424d;opacity:.7">
+                      <div style="display:flex;align-items:center;gap:8px"><span style="width:6px;height:6px;border-radius:50%;background:#d6837f"></span><span style="font-family:'JetBrains Mono',monospace;font-size:10px;color:#75798c">US-03</span></div>
+                      <span style="font-size:14.5px;font-weight:500;line-height:1.3;text-decoration:line-through;text-decoration-color:rgba(214,131,127,.7)">Pagar con link compartido</span>
+                    </div>
+                  </div>
+                </div>
+                <div style="display:flex;align-items:center;gap:8px;padding:11px 12px;border-radius:8px;background:#1c1d29;box-shadow:inset 0 0 0 1px #3f424d;border-left:2px solid rgba(214,131,127,.55);opacity:.72">
+                  <span style="font-size:14px;text-decoration:line-through;text-decoration-color:rgba(214,131,127,.7)">Recuperación de carrito</span>
+                  <span style="margin-left:auto;font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#75798c">2 hist.</span>
+                </div>
+              </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:8px;padding:13px 12px;border-radius:8px;background:#191b28;box-shadow:inset 0 0 0 1px #3f424d">
+              <span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#9397ab">›</span>
+              <span style="font-size:15px;font-weight:500;margin-right:auto">Panel de métricas</span>
+              <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#75798c">4 hist.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- mobile: historia abierta -->
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <span style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#75798c">Historia abierta · fuente expandida</span>
+        <div style="width:390px;height:844px;overflow:hidden;border-radius:28px;background:#161826;box-shadow:0 0 0 1px #3f424d,0 18px 40px rgba(0,0,0,.45);display:flex;flex-direction:column">
+          <div style="display:flex;align-items:center;gap:10px;padding:14px 16px;border-bottom:1px solid rgba(233,233,237,.08)">
+            <span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#b5abfc">←</span>
+            <span style="font-size:12.5px;color:#9397ab;margin-right:auto">Pago con un clic</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#75798c">US-01</span>
+          </div>
+          <div style="flex:1;display:flex;flex-direction:column;gap:16px;padding:16px;overflow:hidden">
+            <div style="display:flex;flex-direction:column;gap:9px">
+              <div style="display:flex;align-items:center;gap:8px">
+                <span style="display:inline-flex;align-items:center;gap:6px;padding:3px 8px 3px 6px;border-radius:6px;background:rgba(106,181,141,.14);box-shadow:inset 0 0 0 1px rgba(122,197,157,.4);font-size:10.5px;color:#a3dcbd"><span style="width:6px;height:6px;border-radius:50%;background:#7ac59d"></span>Aprobado</span>
+                <span style="display:inline-flex;align-items:baseline;gap:3px;padding:3px 8px;border-radius:6px;box-shadow:inset 0 0 0 1px rgba(145,132,217,.5);font-family:'JetBrains Mono',monospace;font-size:11.5px;color:#b5abfc">5<span style="font-size:9px;color:#9397ab">pts</span></span>
+              </div>
+              <h4 style="margin:0;font-size:21px;line-height:1.2;letter-spacing:-.015em">Guardar método de pago preferido</h4>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:7px;padding:12px;border-radius:8px;background:rgba(145,132,217,.06);box-shadow:inset 2px 0 0 rgba(145,132,217,.5);font-size:13.5px;line-height:1.45">
+              <span><span style="font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:#75798c;margin-right:8px">Como</span>cliente recurrente de la tienda</span>
+              <span><span style="font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:#75798c;margin-right:8px">Quiero</span>que mi tarjeta guardada aparezca preseleccionada</span>
+              <span><span style="font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:#75798c;margin-right:8px">Para</span>no volver a escribir mis datos en cada compra</span>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <span style="font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:#9397ab">Criterios de aceptación</span>
+              <div style="display:grid;grid-template-columns:18px 1fr;gap:6px 8px;font-size:13px;line-height:1.45;color:#e9e9ed">
+                <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#8b7fd0;padding-top:2px">01</span><span><span style="color:#9397ab">Dado que</span> tengo una tarjeta guardada, <span style="color:#9397ab">cuando</span> abro el checkout, <span style="color:#9397ab">entonces</span> aparece preseleccionada con los últimos 4 dígitos.</span>
+                <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#8b7fd0;padding-top:2px">02</span><span><span style="color:#9397ab">Dado que</span> tengo dos o más tarjetas, <span style="color:#9397ab">cuando</span> toco “cambiar”, <span style="color:#9397ab">entonces</span> veo la lista por último uso.</span>
+              </div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:10px;padding:12px;border-radius:8px;background:#1b1d2b;box-shadow:inset 0 0 0 1px rgba(145,132,217,.35)">
+              <div style="display:flex;align-items:center;gap:8px"><span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#b5abfc">⌄</span><span style="font-size:12.5px;color:#b5abfc;margin-right:auto">Ver fuente (2)</span><span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#75798c">00:00–00:44</span></div>
+              <div style="display:grid;grid-template-columns:2px 1fr;gap:10px">
+                <span style="border-radius:1px;background:rgba(145,132,217,.45)"></span>
+                <div style="display:flex;flex-direction:column;gap:3px"><span style="font-family:'JetBrains Mono',monospace;font-size:12.5px;line-height:1.55">“necesitamos que el checkout recuerde la tarjeta del cliente”</span><span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#75798c">Ana (PM) · 00:00:03</span></div>
+              </div>
+              <div style="display:grid;grid-template-columns:2px 1fr;gap:10px">
+                <span style="border-radius:1px;background:rgba(145,132,217,.45)"></span>
+                <div style="display:flex;flex-direction:column;gap:3px"><span style="font-family:'JetBrains Mono',monospace;font-size:12.5px;line-height:1.55">“y si la rechazan, pedimos CVV otra vez antes de cobrar”</span><span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#75798c">Ana (PM) · 00:00:44</span></div>
+              </div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <span style="font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:#9397ab">Subtareas</span>
+              <div style="display:flex;flex-direction:column;gap:6px;font-size:12.5px;color:#cfd3e5">
+                <span style="display:flex;align-items:center;gap:8px"><span style="font-family:'JetBrains Mono',monospace;font-size:9.5px;padding:2px 6px;border-radius:4px;background:rgba(145,132,217,.14);color:#b5abfc;min-width:68px;text-align:center">frontend</span>Selector preseleccionado</span>
+                <span style="display:flex;align-items:center;gap:8px"><span style="font-family:'JetBrains Mono',monospace;font-size:9.5px;padding:2px 6px;border-radius:4px;background:rgba(147,151,171,.16);color:#cfd3e5;min-width:68px;text-align:center">backend</span>GET /payment-methods</span>
+              </div>
+            </div>
+          </div>
+          <div style="display:flex;gap:8px;padding:12px 16px 18px;border-top:1px solid rgba(233,233,237,.08);background:#161826">
+            <span style="flex:1;display:inline-flex;align-items:center;justify-content:center;height:44px;border-radius:8px;box-shadow:inset 0 0 0 1px rgba(233,233,237,.16);font-size:13.5px;color:#cfd3e5">Editar</span>
+            <span style="flex:1;display:inline-flex;align-items:center;justify-content:center;height:44px;border-radius:8px;box-shadow:inset 0 0 0 1px rgba(122,197,157,.4);font-size:13.5px;color:#a3dcbd;opacity:.45">Aprobado</span>
+            <span style="width:44px;display:inline-flex;align-items:center;justify-content:center;height:44px;border-radius:8px;box-shadow:inset 0 0 0 1px rgba(214,131,127,.35);font-size:15px;color:#e8b0ad">✕</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- mobile: job corriendo + hoja de reuniones -->
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <span style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#75798c">Job corriendo · hoja “Mis reuniones”</span>
+        <div style="width:390px;height:844px;overflow:hidden;border-radius:28px;background:#161826;box-shadow:0 0 0 1px #3f424d,0 18px 40px rgba(0,0,0,.45);display:flex;flex-direction:column;position:relative">
+          <div style="display:flex;flex-direction:column;gap:14px;padding:16px">
+            <div style="display:flex;align-items:center;gap:10px">
+              <span style="display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:7px;box-shadow:inset 0 0 0 1px #9184d9;font-family:'JetBrains Mono',monospace;font-size:10px;color:#b5abfc">PO</span>
+              <span style="font-size:14px;font-weight:500;margin-right:auto">Agente PO</span>
+              <span style="width:26px;height:26px;border-radius:50%;background:#3f424d;box-shadow:inset 0 0 0 1px #595d6c"></span>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:14px;padding:14px;border-radius:8px;background:#1b1d2b;box-shadow:inset 0 0 0 1px rgba(145,132,217,.45)">
+              <div style="display:flex;align-items:center;gap:9px">
+                <span style="width:7px;height:7px;border-radius:50%;background:#b5abfc;animation:pulse 1.6s ease-in-out infinite"></span>
+                <span style="font-size:13.5px;font-weight:500;margin-right:auto">checkout-v2-kickoff</span>
+                <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#b5abfc">4/7</span>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:0">
+                <div style="display:grid;grid-template-columns:20px 1fr;gap:10px;align-items:center"><span style="justify-self:center;width:9px;height:9px;border-radius:50%;background:#9184d9"></span><span style="font-size:12.5px;color:#9397ab;padding:4px 0">Normalizar<span style="font-family:'JetBrains Mono',monospace;font-size:10px;color:#595d6c;margin-left:8px">normalize</span></span></div>
+                <div style="display:grid;grid-template-columns:20px 1fr;gap:10px"><span style="justify-self:center;width:1px;height:10px;background:#9184d9"></span><span></span></div>
+                <div style="display:grid;grid-template-columns:20px 1fr;gap:10px;align-items:center"><span style="justify-self:center;width:9px;height:9px;border-radius:50%;background:#9184d9"></span><span style="font-size:12.5px;color:#9397ab;padding:4px 0">Segmentar<span style="font-family:'JetBrains Mono',monospace;font-size:10px;color:#595d6c;margin-left:8px">segment</span></span></div>
+                <div style="display:grid;grid-template-columns:20px 1fr;gap:10px"><span style="justify-self:center;width:1px;height:10px;background:#9184d9"></span><span></span></div>
+                <div style="display:grid;grid-template-columns:20px 1fr;gap:10px;align-items:center"><span style="justify-self:center;width:9px;height:9px;border-radius:50%;background:#9184d9"></span><span style="font-size:12.5px;color:#9397ab;padding:4px 0">Clasificar<span style="font-family:'JetBrains Mono',monospace;font-size:10px;color:#595d6c;margin-left:8px">classify</span></span></div>
+                <div style="display:grid;grid-template-columns:20px 1fr;gap:10px"><span style="justify-self:center;width:1px;height:10px;background:#9184d9"></span><span></span></div>
+                <div style="display:grid;grid-template-columns:20px 1fr;gap:10px;align-items:center"><span style="justify-self:center;width:11px;height:11px;border-radius:50%;background:#1b1d2b;box-shadow:0 0 0 2px #b5abfc,0 0 0 5px rgba(145,132,217,.22);animation:pulse 1.6s ease-in-out infinite"></span><span style="font-size:13px;font-weight:500;color:#d2cefd;padding:4px 0">Extraer entidades<span style="font-family:'JetBrains Mono',monospace;font-size:10px;color:#8b7fd0;margin-left:8px">extract_entities</span></span></div>
+                <div style="display:grid;grid-template-columns:20px 1fr;gap:10px"><span style="justify-self:center;width:1px;height:10px;background:rgba(233,233,237,.14)"></span><span></span></div>
+                <div style="display:grid;grid-template-columns:20px 1fr;gap:10px;align-items:center"><span style="justify-self:center;width:9px;height:9px;border-radius:50%;background:#1b1d2b;box-shadow:inset 0 0 0 1px #595d6c"></span><span style="font-size:12.5px;color:#75798c;padding:4px 0">Generar backlog<span style="font-family:'JetBrains Mono',monospace;font-size:10px;color:#4a4d59;margin-left:8px">generate_backlog</span></span></div>
+                <div style="display:grid;grid-template-columns:20px 1fr;gap:10px"><span style="justify-self:center;width:1px;height:10px;background:rgba(233,233,237,.14)"></span><span></span></div>
+                <div style="display:grid;grid-template-columns:20px 1fr;gap:10px;align-items:center"><span style="justify-self:center;width:9px;height:9px;border-radius:50%;background:#1b1d2b;box-shadow:inset 0 0 0 1px #595d6c"></span><span style="font-size:12.5px;color:#75798c;padding:4px 0">Estimar<span style="font-family:'JetBrains Mono',monospace;font-size:10px;color:#4a4d59;margin-left:8px">estimate</span></span></div>
+                <div style="display:grid;grid-template-columns:20px 1fr;gap:10px"><span style="justify-self:center;width:1px;height:10px;background:rgba(233,233,237,.14)"></span><span></span></div>
+                <div style="display:grid;grid-template-columns:20px 1fr;gap:10px;align-items:center"><span style="justify-self:center;width:9px;height:9px;border-radius:50%;background:#1b1d2b;box-shadow:inset 0 0 0 1px #595d6c"></span><span style="font-size:12.5px;color:#75798c;padding:4px 0">Validar<span style="font-family:'JetBrains Mono',monospace;font-size:10px;color:#4a4d59;margin-left:8px">validate</span></span></div>
+              </div>
+              <span style="font-size:11.5px;color:#75798c">~40 s restantes · puedes cerrar la app, el job sigue</span>
+            </div>
+          </div>
+          <div style="position:absolute;inset:0;background:rgba(22,24,38,.65)"></div>
+          <div style="position:absolute;left:0;right:0;bottom:0;display:flex;flex-direction:column;gap:12px;padding:14px 16px 22px;border-radius:20px 20px 28px 28px;background:#1b1d2b;box-shadow:0 -1px 0 #3f424d,0 -18px 40px rgba(0,0,0,.5)">
+            <span style="width:38px;height:4px;border-radius:2px;background:#3f424d;align-self:center"></span>
+            <div style="display:flex;align-items:baseline;gap:8px"><span style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#9397ab">Mis reuniones</span><span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#595d6c;margin-left:auto">4</span></div>
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <div style="display:flex;align-items:center;gap:10px;padding:12px;border-radius:8px;background:#232532;box-shadow:inset 0 0 0 1px rgba(145,132,217,.55)"><span style="width:7px;height:7px;border-radius:50%;background:#b5abfc"></span><div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:13.5px;font-weight:500">checkout-v2-kickoff</span><span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#75798c">Procesando · hoy 11:24</span></div></div>
+              <div style="display:flex;align-items:center;gap:10px;padding:12px;border-radius:8px;box-shadow:inset 0 0 0 1px rgba(233,233,237,.08)"><span style="width:7px;height:7px;border-radius:50%;background:#7ac59d"></span><div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:13.5px;color:#cfd3e5">refinamiento-notifs</span><span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#75798c">Completado · ayer 16:02</span></div></div>
+              <div style="display:flex;align-items:center;gap:10px;padding:12px;border-radius:8px;box-shadow:inset 0 0 0 1px rgba(233,233,237,.08)"><span style="width:7px;height:7px;border-radius:50%;background:#d6837f"></span><div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:13.5px;color:#cfd3e5">daily-2026-08-19</span><span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#75798c">Falló · 19 ago 09:41</span></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ MODO CLARO ══ -->
+  <div id="b-claro" style="display:flex;flex-direction:column;gap:16px">
+    <div style="display:flex;flex-direction:column;gap:6px">
+      <span style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#9184d9">08 · Modo claro</span>
+      <h2 style="margin:0;font-size:28px">Los mismos tonos, invertidos por la rampa</h2>
+      <p style="margin:0;max-width:74ch;font-size:13.5px;color:#9397ab;text-wrap:pretty">Nada se rediseña: cada valor salta al escalón espejo de la rampa (900↔100). El acento baja a <span style="font-family:'JetBrains Mono',monospace;color:#b5abfc">#5d5294</span> para texto y <span style="font-family:'JetBrains Mono',monospace;color:#b5abfc">#796cbf</span> para líneas, y verde/rojo se oscurecen para mantener contraste. En claro la elevación es sombra suave; en oscuro es borde + oscuridad ambiental.</p>
+    </div>
+    <div style="width:900px;border-radius:14px;overflow:hidden;background:#f4f6fc;box-shadow:0 0 0 1px #cfd3e5,0 18px 40px rgba(41,43,49,.18);color:#292b31">
+      <div style="display:flex;align-items:center;gap:12px;padding:12px 20px;background:#fbfcfe;border-bottom:1px solid #e4e7f5">
+        <span style="display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:7px;box-shadow:inset 0 0 0 1px #796cbf;font-family:'JetBrains Mono',monospace;font-size:11px;color:#5d5294">PO</span>
+        <span style="font-size:15px;font-weight:500;margin-right:auto">Agente PO</span>
+        <span style="font-size:12.5px;color:#75798c">Sesión activa: <span style="font-family:'JetBrains Mono',monospace;color:#595d6c">ana@equipo.mx</span></span>
+        <span style="width:28px;height:28px;border-radius:50%;background:#e4e7f5;box-shadow:inset 0 0 0 1px #cfd3e5"></span>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:14px;padding:20px">
+        <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:13px 15px;border-radius:8px;background:#fbfcfe;box-shadow:0 0 0 1px #e4e7f5,0 1px 2px rgba(41,43,49,.06)">
+          <span style="display:inline-flex;align-items:center;gap:7px;padding:4px 10px 4px 8px;border-radius:6px;background:rgba(31,109,72,.09);box-shadow:inset 0 0 0 1px rgba(31,109,72,.28);font-size:11.5px;color:#1f6d48"><span style="width:7px;height:7px;border-radius:50%;background:#2f8a5c"></span>Completado</span>
+          <span style="font-size:14px;font-weight:500">checkout-v2-kickoff</span>
+          <span style="font-family:'JetBrains Mono',monospace;font-size:11.5px;color:#75798c">job 8f3a91c4 · 7/7 etapas</span>
+          <div style="display:flex;gap:8px;margin-left:auto">
+            <span style="display:inline-flex;align-items:center;height:30px;padding:0 12px;border-radius:8px;box-shadow:inset 0 0 0 1px #cfd3e5;font-size:12.5px;color:#3f424d">Exportar JSON</span>
+            <span style="display:inline-flex;align-items:center;height:30px;padding:0 12px;border-radius:8px;box-shadow:inset 0 0 0 1px #796cbf;font-size:12.5px;color:#5d5294">Exportar Markdown</span>
+            <span style="display:inline-flex;align-items:center;height:30px;padding:0 12px;border-radius:8px;box-shadow:inset 0 0 0 1px #cfd3e5;font-size:12.5px;color:#3f424d">Exportar CSV</span>
+          </div>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:12px;padding:16px;border-radius:8px;background:#fbfcfe;box-shadow:0 0 0 1px #e4e7f5,0 1px 2px rgba(41,43,49,.06)">
+          <div style="display:flex;align-items:center;gap:10px">
+            <span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#75798c">⌄</span>
+            <div style="display:flex;flex-direction:column;gap:4px;margin-right:auto">
+              <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.08em;color:#75798c">ÉPICA 1 · 2 FEATURES · 8 HISTORIAS</span>
+              <span style="font-size:22px;font-weight:500;letter-spacing:-.015em">Rediseño del checkout</span>
+            </div>
+            <span style="display:inline-flex;align-items:center;gap:7px;padding:3px 9px 3px 7px;border-radius:6px;background:rgba(31,109,72,.09);box-shadow:inset 0 0 0 1px rgba(31,109,72,.28);font-size:11px;color:#1f6d48"><span style="width:6px;height:6px;border-radius:50%;background:#2f8a5c"></span>Aprobado</span>
+            <div style="display:flex;gap:4px">
+              <span style="display:inline-flex;align-items:center;height:28px;padding:0 10px;border-radius:7px;font-size:12px;color:#3f424d;box-shadow:inset 0 0 0 1px #cfd3e5">Editar</span>
+              <span style="display:inline-flex;align-items:center;height:28px;padding:0 10px;border-radius:7px;font-size:12px;color:#1f6d48;opacity:.45">Aprobar</span>
+              <span style="display:inline-flex;align-items:center;height:28px;padding:0 10px;border-radius:7px;font-size:12px;color:#a4423d">Descartar</span>
+            </div>
+          </div>
+          <div style="margin-left:23px;padding-left:18px;border-left:1px solid #e4e7f5;display:flex;flex-direction:column;gap:10px">
+            <div style="display:flex;flex-direction:column;gap:10px;padding:14px 16px;border-radius:8px;background:#f4f6fc;box-shadow:0 0 0 1px #e4e7f5;border-left:2px solid #796cbf">
+              <div style="display:flex;align-items:center;gap:10px">
+                <span style="font-size:17px;font-weight:500;margin-right:auto">Pago con un clic</span>
+                <span style="display:inline-flex;align-items:center;gap:7px;padding:3px 9px 3px 7px;border-radius:6px;background:rgba(117,121,140,.12);box-shadow:inset 0 0 0 1px rgba(117,121,140,.3);font-size:11px;color:#595d6c"><span style="width:6px;height:6px;border-radius:50%;background:#75798c"></span>Borrador</span>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:9px">
+                <div style="display:flex;flex-direction:column;gap:10px;padding:13px 14px;border-radius:8px;background:#fbfcfe;box-shadow:0 0 0 1px #e4e7f5,0 1px 2px rgba(41,43,49,.05)">
+                  <div style="display:flex;align-items:center;gap:10px">
+                    <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#75798c">US-01</span>
+                    <span style="font-size:16px;font-weight:500;margin-right:auto">Guardar método de pago preferido</span>
+                    <span style="display:inline-flex;align-items:baseline;gap:4px;padding:3px 9px;border-radius:6px;box-shadow:inset 0 0 0 1px rgba(121,108,191,.5);font-family:'JetBrains Mono',monospace;font-size:12px;color:#5d5294">5<span style="font-size:10px;color:#75798c">pts</span></span>
+                  </div>
+                  <div style="display:grid;grid-template-columns:auto 1fr;gap:4px 12px;padding:11px 13px;border-radius:8px;background:rgba(121,108,191,.05);box-shadow:inset 2px 0 0 rgba(121,108,191,.45);font-size:13.5px;line-height:1.45">
+                    <span style="font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#75798c;padding-top:3px">Como</span><span>cliente recurrente de la tienda</span>
+                    <span style="font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#75798c;padding-top:3px">Quiero</span><span>que mi tarjeta guardada aparezca preseleccionada en el checkout</span>
+                    <span style="font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#75798c;padding-top:3px">Para</span><span>no volver a escribir mis datos en cada compra</span>
+                  </div>
+                  <div style="display:grid;grid-template-columns:18px 1fr;gap:6px 8px;font-size:13px;line-height:1.5;color:#292b31">
+                    <span style="font-family:'JetBrains Mono',monospace;font-size:11.5px;color:#5d5294;padding-top:2px">01</span><span><span style="color:#75798c">Dado que</span> tengo una tarjeta guardada, <span style="color:#75798c">cuando</span> abro el checkout, <span style="color:#75798c">entonces</span> aparece preseleccionada con los últimos 4 dígitos.</span>
+                    <span style="font-family:'JetBrains Mono',monospace;font-size:11.5px;color:#5d5294;padding-top:2px">02</span><span><span style="color:#75798c">Dado que</span> tengo dos o más tarjetas, <span style="color:#75798c">cuando</span> toco “cambiar”, <span style="color:#75798c">entonces</span> veo la lista ordenada por último uso.</span>
+                  </div>
+                  <div style="display:flex;align-items:center;gap:8px">
+                    <span style="display:inline-flex;align-items:center;gap:7px;padding:5px 10px;border-radius:6px;box-shadow:inset 0 0 0 1px rgba(121,108,191,.45);font-size:12px;color:#5d5294"><span style="font-family:'JetBrains Mono',monospace;font-size:11px">›</span>Ver fuente (2)</span>
+                    <span style="font-size:11.5px;color:#75798c">Ana (PM), Luis (Tech Lead)</span>
+                  </div>
+                </div>
+                <div style="display:flex;align-items:center;gap:10px;padding:11px 14px;border-radius:8px;background:#fbfcfe;box-shadow:0 0 0 1px #e4e7f5">
+                  <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#75798c">US-03</span>
+                  <span style="font-size:15px;font-weight:500;text-decoration:line-through;text-decoration-color:rgba(164,66,61,.6);color:#595d6c;margin-right:auto">Pagar con link compartido</span>
+                  <span style="display:inline-flex;align-items:center;gap:7px;padding:3px 9px 3px 7px;border-radius:6px;background:rgba(164,66,61,.09);box-shadow:inset 0 0 0 1px rgba(164,66,61,.28);font-size:11px;color:#a4423d"><span style="width:6px;height:6px;border-radius:50%;background:#b0504b"></span>Descartado</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:12px;max-width:900px">
+      <span style="display:inline-flex;align-items:center;gap:8px;font-size:12px;color:#9397ab"><span style="width:12px;height:12px;border-radius:3px;background:#2f8a5c"></span>aprobado claro #2f8a5c / oscuro #7ac59d</span>
+      <span style="display:inline-flex;align-items:center;gap:8px;font-size:12px;color:#9397ab"><span style="width:12px;height:12px;border-radius:3px;background:#b0504b"></span>descartado claro #b0504b / oscuro #d6837f</span>
+      <span style="display:inline-flex;align-items:center;gap:8px;font-size:12px;color:#9397ab"><span style="width:12px;height:12px;border-radius:3px;background:#796cbf"></span>acento claro #796cbf / oscuro #9184d9</span>
+    </div>
+  </div>
+
+</section>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}"></script>
+</body>
+</html>
