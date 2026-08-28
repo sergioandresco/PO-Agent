@@ -1,6 +1,6 @@
 "use client";
 
-import { useAuth } from "@clerk/nextjs";
+import { useAuth } from "@clerk/react";
 import type { BacklogResult, Epic, Feature, Job, UserStory } from "@po-agent/contracts";
 import { useMemo, useRef, useState } from "react";
 import { createJob, getJob, getJobResult, patchArtifact } from "@/lib/api-client";

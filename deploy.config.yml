@@ -1,0 +1,32 @@
+# Despliegue del frontend estatico (apps/web) a S3 privado + CloudFront con OAC.
+# Consumido por la skill deploy-spa-aws. No contiene secretos: es seguro commitearlo.
+project: po-agent
+
+defaults:
+  region: us-east-1
+
+  # `next build` con output:"export" escribe el sitio en apps/web/out
+  build_command: pnpm --filter web build
+  dist_dir: apps/web/out
+
+  # US + EU. El trafico desde Colombia sale por Miami (~60 ms), y es la clase mas
+  # barata si algun dia se pasa la capa gratuita. Subir a PriceClass_All solo si
+  # la latencia en LatAm llega a molestar.
+  price_class: PriceClass_100
+
+  # 403/404 -> /index.html con 200. Red de seguridad para rutas que no existen
+  # como objeto en S3. El resolutor real de rutas es la CloudFront Function
+  # de infra/cloudfront/append-index.js (ver docs/despliegue-aws.md).
+  spa_fallback: true
+
+  logging:
+    enabled: false
+
+  rollback:
+    keep_versions: 5
+
+environments:
+  prod:
+    bucket: po-agent-web-{account_id}
+    aws_profile: po-agent
+    comment: Agente PO - frontend estatico

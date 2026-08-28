@@ -33,3 +33,8 @@ infra/node_modules/
 
 # Logs
 *.log
+
+# deploy-spa-aws (estado local del despliegue)
+.cloudfront-distribution-id
+_build-check.tar.gz
+deploy-spa-aws.zip
