@@ -25,6 +25,7 @@ __pycache__/
 # CDK
 infra/cdk.out/
 infra/node_modules/
+infra/build/
 
 # Editors / OS
 .DS_Store
@@ -33,8 +34,3 @@ infra/node_modules/
 
 # Logs
 *.log
-
-# deploy-spa-aws (estado local del despliegue)
-.cloudfront-distribution-id
-_build-check.tar.gz
-deploy-spa-aws.zip

@@ -1,0 +1,13 @@
+{
+  "app": "npx ts-node --prefer-ts-exts bin/po-agent.ts",
+  "watch": { "exclude": ["**/*.d.ts", "node_modules/**", "cdk.out/**", "build/**"] },
+  "context": {
+    "corsAllowedOrigins": "https://d2535zv4v0sfg0.cloudfront.net",
+    "llmProvider": "gemini",
+    "llmModel": "gemini-3.1-flash-lite",
+    "@aws-cdk/aws-lambda:recognizeLayerVersion": true,
+    "@aws-cdk/core:checkSecretUsage": true,
+    "@aws-cdk/aws-iam:minimizePolicies": true,
+    "@aws-cdk/core:validateSnapshotRemovalPolicy": true
+  }
+}

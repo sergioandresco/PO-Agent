@@ -1,0 +1,12 @@
+# Runtime dependencies for the Lambda layer.
+#
+# Kept in step with pyproject.toml, minus what Lambda already provides or does
+# not need: boto3/botocore ship with the python3.12 runtime, and uvicorn only
+# matters for the local server. Pinned loosely on purpose — the lockfile that
+# matters for reproducibility is uv.lock, used by CI and local development.
+pydantic>=2.9
+google-genai>=2.19.0
+python-dotenv>=1.2.3
+fastapi>=0.141.1
+clerk-backend-api>=7.0.0
+mangum>=0.19

@@ -33,5 +33,5 @@ def patch_artifact(
     model_cls = _MODEL_BY_TYPE[artifact_type]
     updated = model_cls.model_validate(merged)
 
-    job_store.update_artifact(job_id, artifact_type, updated)
+    job_store.update_artifact(job_id, user_id, artifact_type, updated)
     return updated

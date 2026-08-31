@@ -5,8 +5,8 @@ import pytest
 from fastapi.testclient import TestClient
 
 from services.api import job_store
+from services.api.app import app
 from services.api.auth import require_user_id
-from services.api.local_server import app
 from services.pipeline.models import (
     ArtifactStatus,
     BacklogResult,
@@ -20,10 +20,8 @@ from services.pipeline.models import (
 
 @pytest.fixture(autouse=True)
 def _clean_job_store() -> Iterator[None]:
-    job_store._jobs.clear()
-    job_store._results.clear()
-    job_store._transcripts.clear()
-    job_store._artifact_index.clear()
+    job_store.use_store(None)
+    job_store.reset()
     yield
     app.dependency_overrides.clear()
 
@@ -70,8 +68,8 @@ def _seed_completed_job(user_id: str) -> tuple[str, str, str, str]:
         generated_at=datetime.now(UTC),
         pipeline_version="test",
     )
-    job_store.set_result(job.job_id, backlog)
-    job_store.mark_completed(job.job_id)
+    job_store.set_result(job.job_id, user_id, backlog)
+    job_store.mark_completed(job.job_id, user_id)
     return job.job_id, epic.id, feature.id, story.id
 
 
