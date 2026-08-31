@@ -1,6 +1,6 @@
 "use client";
 
-import { useAuth } from "@clerk/nextjs";
+import { useAuth } from "@clerk/react";
 import { useState } from "react";
 import { exportJob, type ExportFormat } from "@/lib/api-client";
 

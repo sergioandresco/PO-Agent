@@ -25,6 +25,7 @@ __pycache__/
 # CDK
 infra/cdk.out/
 infra/node_modules/
+infra/build/
 
 # Editors / OS
 .DS_Store

@@ -1,0 +1,23 @@
+{
+  "name": "po-agent-infra",
+  "version": "0.1.0",
+  "private": true,
+  "bin": { "po-agent": "bin/po-agent.js" },
+  "scripts": {
+    "build:assets": "node build-assets.mjs",
+    "synth": "npm run build:assets && cdk synth",
+    "deploy": "npm run build:assets && cdk deploy",
+    "diff": "npm run build:assets && cdk diff",
+    "destroy": "cdk destroy"
+  },
+  "devDependencies": {
+    "@types/node": "^22",
+    "aws-cdk": "^2.1029.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "aws-cdk-lib": "^2.267.0",
+    "constructs": "^10.4.2"
+  }
+}
